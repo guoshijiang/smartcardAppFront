@@ -1,0 +1,37 @@
+<ion-view hide-tabs="true">
+    <ion-nav-title>
+        <div class="bar bar-positive">
+            <div class="button-bar nav-bar">
+                <a class="button">验证码快速登录</a>
+            </div>
+        </div>
+    </ion-nav-title>
+    <ion-content>
+            <!--<button style="width:65%; height:38px; border: solid 1px #f2f2f2; background-color:white; font-size:18px; color:#0c60ee " >22立即登陆</button>-->
+        </div>
+        <div  class="inputLogin gap-10">
+            <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+                <input ng-model="vm.loginP.phone" style="width:65%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的手机号码">
+            </div>
+
+            <div class="gap-5" style="border-bottom:solid 1px #f2f2f2;" >
+                <input ng-model="vm.loginP.verifycode" style="width:65%; height:42px; margin-left:3px; display: inline-block" type="text" placeholder="请输入您的验证码">
+                <button ng-click="vm.getCode()" style="width:30%; height:28px;border:solid 1px #f2f2f2; background-color:white; color:#0c60ee;display:inline-block">获取验证码</button>
+            </div>
+
+            <div class="gap-20" ng-click="vm.loginByPhone()">
+                <button style="width:65%; height:38px; border: solid 1px #f2f2f2; background-color:white; font-size:18px; color:#0c60ee " >立即登陆</button>
+            </div>
+
+            <div class="button-bar nav-bar">
+                <a class="button" style="font-size:12px" href="#/registerPhone">没有账户，去注册</a>
+            </div>
+
+            <div class="button-bar nav-bar gap-3">
+                <a class="button" href="#/loginPwd" style="font-size:15px">账户密码登陆</a>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>
+

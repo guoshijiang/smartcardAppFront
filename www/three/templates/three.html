@@ -1,0 +1,106 @@
+<ion-view hide-back-button='true' id="assist">
+  <ion-nav-title>
+    <div class="bar bar-positive">
+      <div class="button-bar nav-bar">
+        <a class="button" nav-transition="ios" nav-direction="enter">卡得学院</a>
+      </div>
+    </div>
+  </ion-nav-title>
+  <ion-content>
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="vm.doRefresh()">
+    </ion-refresher>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval=3000 show-pager="true">
+      <ion-slide>
+        <img src="img/libbook.png" class="img-responsive">
+      </ion-slide>
+      <ion-slide>
+        <img src="img/libbookone.png" class="img-responsive">
+      </ion-slide>
+      <ion-slide>
+        <img src="img/libbooktwo.png" class="img-responsive">
+      </ion-slide>
+    </ion-slide-box>
+
+    <div class="list">
+      <div class='item_box item  padding-none'>
+        <div class="row row-wrap xn-first">
+          <div class='col col-20 ' ui-sref='tab.homeWork'>
+            <span class='icon_box icon_bg'>
+              <img src="img/snatch-treasure.png" alt="">
+            </span>
+            <h4>活动专区</h4>
+          </div>
+          <div class='col col-20 ' ui-sref='tab.customerInfo'>
+            <span class='icon_box icon_bg'>
+              <img src="img/customer-source.png" alt="">
+            </span>
+            <h4>商务动态</h4>
+          </div>
+          <div class='col col-20 ' ui-sref='tab.industryUser'>
+            <span class='icon_box icon_bg'>
+              <img src="img/help-idea.png" alt="">
+            </span>
+            <h4>辅助工具</h4>
+          </div>
+          <div class='col col-20 ' ui-sref='tab.recruitment'>
+            <span class='icon_box icon_bg'>
+              <img src="img/company-product.png" alt="">
+            </span>
+            <h4>销售培训</h4>
+          </div>
+          <div class='col col-20 ' nav-transition="ios" nav-direction="enter" ui-sref='tab.qiyechaxun'>
+            <span class='icon_box icon_bg'>
+              <img src="img/company-query.png" alt="">
+            </span>
+            <h4>客户查询</h4>
+          </div>
+        </div>
+        <div class="row border-top-1 item-padding-10 position-par">
+          <span class="col col-25 text-right pa-right-10" ui-sref='tab.condition({id:"ss"})'>卡得商务</span>
+          <i class="border-right-1"></i>
+          <span class="col pa-left-10">打造以名片为基础的商务社交平台</span>
+        </div>
+      </div>
+    </div>
+
+    <ul class="row third-bar text-center my-order">
+      <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='shangye'}" ng-click="vm.changeTag('shangye')"
+        class="col">最新商业动态 </li>
+      <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='mingpian'}" ng-click="vm.changeTag('mingpian')"
+        class="col">推荐商业动态 </li>
+      <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='mingpian'}" ng-click="vm.changeTag('mingpian')"
+          class="col">热门商业动态 </li>
+    </ul>
+    <div class="list card">
+      <div>
+        <div class="item item-image" ui-sref="tab.dt_detail({id:'734674623746'})">
+          <img src="img/adam.jpg">
+          <a class="item item-icon-right" href="javascript:;">
+            <i class="icon  ion-ios-arrow-forward"></i>
+            资本寒冬
+          </a>
+        </div>
+        <p class="pull-right assist_opt">
+          <a class="subdued">1 点赞</a>
+          <a class="subdued">5 评论</a>
+        </p>
+      </div>
+      <div>
+        <div class="item item-image" ui-sref="tab.dt_detail({id:'734674623746'})">
+          <img src="img/adam.jpg">
+          <a class="item item-icon-right" href="javascript:;">
+            <i class="icon  ion-ios-arrow-forward"></i>
+            资本寒冬
+          </a>
+        </div>
+        <p class="pull-right assist_opt">
+          <a class="subdued">1 点赞</a>
+          <a class="subdued">5 评论</a>
+        </p>
+
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

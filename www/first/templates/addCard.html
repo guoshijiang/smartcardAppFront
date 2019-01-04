@@ -1,0 +1,76 @@
+<ion-view hide-tabs="true" hide-back-button='true'>
+  <ion-nav-title>
+    <div class="bar bar-positive">
+      <div class="button-bar nav-bar">
+        <a class="button">添加名片</a>
+      </div>
+    </div>
+  </ion-nav-title>
+
+  <ion-content class="xn-content">
+    <div class="inputLogin">
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+      <input ng-model="vm.form.username" style="width:98%;  height:42px; margin-left:3px;" type="text" placeholder="请输入您的名字">
+    </div>
+
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+        <input ng-model="vm.form.position" style="width:98%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的职位">
+      </div>
+
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+        <input ng-model="vm.form.phone" style="width:98%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的手机号码">
+      </div>
+
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+        <input ng-model="vm.form.companName" style="width:98%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的公司名字">
+      </div>
+
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+        <input ng-model="vm.form.companAdress" style="width:98%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的公司详细地址">
+      </div>
+
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+        <input ng-model="vm.form.companSlogan" style="width:98%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的公司标语">
+      </div>
+
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+        <input ng-model="vm.form.companBrand" style="width:98%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的公司标签">
+      </div>
+
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+        <input ng-model="vm.form.business" style="width:98%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的业务">
+      </div>
+
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+        <input ng-model="vm.form.email" style="width:98%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的邮箱">
+      </div>
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+        <input ng-model="vm.form.fax" style="width:98%; height:42px; margin-left:3px;" type="text" placeholder="请输入您公司的传真">
+      </div>
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+        <input ng-model="vm.form.brandLabel" style="width:98%; height:42px; margin-left:3px;" ng-keypress="($event.which === 13)?addlabel():0" type="text" placeholder="请输入您名片的标签按回车键添加">
+      </div>
+      <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+	      	<label class="person-label">
+	        	<span ng-repeat="label in labelList track by $index">{{label}}</span>
+	      </label>
+      </div>
+      <div class= "gap-10" style="text-align: center">
+        <label style="color:#0c60ee" for="companDesc">请您输入公司简介,字数少于100字</label>
+        <textarea ng-model="vm.form.companDesc" id='companDesc' class="gap-5" style="border:solid 1px #f2f2f2; width:98%; height:130px;text-align: center; font-size: 16px; color:#0c60ee"></textarea>
+      </div>
+
+      <div class="gap-30">
+        <a href="">
+          <button style="width:65%; height:38px; border: solid 1px #f2f2f2; background-color:white; font-size:18px; color:#0c60ee " ng-click="addcard()">确认添加</button>
+        </a>
+      </div>
+    </div>
+
+
+
+  </ion-content>
+
+
+
+</ion-view>

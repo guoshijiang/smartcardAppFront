@@ -1,0 +1,36 @@
+<ion-view hide-tabs="true">
+    <ion-nav-title>
+        <div class="bar bar-positive">
+            <div class="button-bar nav-bar">
+                <a class="button">账号密码登陆</a>
+            </div>
+        </div>
+    </ion-nav-title>
+
+    <ion-content class="xn-content">
+
+        <div  class="inputLogin gap-10">
+            <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
+                <input ng-model="vm.login.username" style="width:65%; height:42px; margin-left:3px;" type="text" placeholder="请输入你的用户名">
+            </div>
+
+            <div class="gap-5" style="border-bottom:solid 1px #f2f2f2;" >
+                <input ng-model="vm.login.password" style="width:65%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的密码">
+            </div>
+
+            <div ng-click="vm.loginByUserAndPwd()" class="gap-20">
+                <button style="width:65%; height:38px; border: solid 1px #f2f2f2; background-color:white; font-size:18px; color:#0c60ee " >立即登陆</button>
+            </div>
+
+            <div class="button-bar nav-bar">
+                <a class="button" style="font-size:12px" href="#/registerPhone">没有账户，去注册</a>
+            </div>
+
+            <div class="button-bar nav-bar">
+                <a class="button" href="#/account" style="font-size:15px">手机号验证码登陆</a>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>
+

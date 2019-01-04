@@ -1,0 +1,15 @@
+.font-header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.personal-card{
+  height: 200px;
+  width: 100%;
+  background-color: white;
+}
+
+.font-card {
+  font-size: 16px;
+}
+

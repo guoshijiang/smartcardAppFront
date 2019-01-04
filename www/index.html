@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/icon.css" rel="stylesheet">
+  <link href="css/font.css" rel="stylesheet">
+  <link href="css/contact.css" rel="stylesheet">
+  <link href="css/158.css" rel="stylesheet">
+  <link href="css/mine.css" rel="stylesheet">
+  <link href="css/card.css" rel="stylesheet">
+  <link href="css/first.css" rel="stylesheet">
+  <link href="css/two.css" rel="stylesheet">
+  <link href="css/account.css" rel="stylesheet">
+  <link href="css/three.css" rel="stylesheet">
+
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/config/app.development.config.js"></script>
+
+  <script src="lib/ionic-toast/dist/ionic-toast.bundle.min.js"></script>
+  <script src="lib/lodash/dist/lodash.js"></script>
+  <script src="lib/restangular/dist/restangular.js"></script>
+
+  <!-- 公用的文件 common -->
+  <script src="common/js/rest_angular.js"></script>
+  <script src="common/routers/index.js"></script>
+  <script src="common/server/index.js"></script>
+  <script src="common/server/three.js"></script>
+  <script src="common/server/first.js"></script>
+  <script src="common/server/four.js"></script>
+  <script src="common/server/two.js"></script>
+  <script src="common/server/account.js"></script>
+
+  <!-- 引入模块文件 -->
+  <script src="first/controller.js"></script>
+  <script src="two/controller.js"></script>
+  <script src="three/controller.js"></script>
+  <script src="account/controller.js"></script>
+  <script src="four/controller.js"></script>
+
+</head>
+
+<body ng-app="starter">
+
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button class="button-clear">
+      <i class="icon ion-ios-arrow-back"></i>
+      <span style='font-weight:600' class="default-title">返回</span>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-nav-view></ion-nav-view>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<ion-view hide-tabs="true">
+  <ion-nav-title>
+    <div class="bar bar-positive">
+      <div class="button-bar nav-bar">
+        <a class="button" nav-transition="ios" nav-direction="enter">详情</a>
+      </div>
+    </div>
+  </ion-nav-title>
+  <ion-content>
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="vm.doRefresh()">
+    </ion-refresher>
+    <div class="company-top-title">
+      <div class="fleat-left company-img">
+        <img ng-src="{{vm.query.ImageUrl}}" alt="">
+      </div>
+      <div class="fleat-left company-right">
+        <p>公司名称：{{vm.query.Name}}</p>
+        <p ng-if='vm.query.OriginalName.length>0'>公司曾用名：
+          <span ng-repeat="i in vm.query.OriginalName track by $index">{{i.Name}}</span>
+        </p>
+        <p>公司法人：{{vm.query.OperName}}</p>
+      </div>
+    </div>
+    <div class="clearfix">
+      <ul class="list" ng-if='vm.query'>
+        <li class="item detail">
+          <p>公司地址：{{vm.query.Address}}</p>
+          <p>公司信用代码：{{vm.query.No}}</p>
+          <p>公司经营范围：{{vm.query.Scope}}</p>
+          <p>公司经营范围变更：
+            <span ng-repeat="i in vm.query.ChangeRecords track by $index">{{i.ProjectName}}:{{i.AfterContent}}</span>{{i.Scope}}</p>
+          <p>公司状态:{{vm.query.Status}}</p>
+          <p>公司注册资产：{{vm.query.RegistCapi}}</p>
+          <p>公司成立时间：{{vm.query.TermStart}}</p>
+          <p>公司更新时间：{{vm.query.UpdatedDate}}</p>
+          <p>联系方式：{{vm.query.ContactInfo.PhoneNumber}}</p>
+          <p>联系邮箱：{{vm.query.ContactInfo.Email}}</p>
+        </li>
+      </ul>
+      <div ng-if='!vm.query'>
+        <h4>数据加载中...</h4>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

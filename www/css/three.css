@@ -1,0 +1,30 @@
+.slide-box {
+  margin: 2px 5px 5px 5px;
+}
+.slide-box .slider {
+  border-radius: 18px;
+}
+.detail p {
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.fleat-left {
+  float: left;
+}
+.company-top-title {
+  background-color: #00c4b6;
+  height: 150px;
+}
+.company-img {
+  width: 150px;
+  height: 100%;
+  border-radius: 5px;
+}
+.company-right {
+  margin-top: 40px;
+  margin-left: 15px;
+  color: #fff;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

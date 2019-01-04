@@ -1,0 +1,57 @@
+<ion-view hide-tabs="true" hide-back-button='true'>
+  <ion-nav-title>
+    <div class="bar bar-positive">
+      <div class="button-bar nav-bar">
+        <div class="bar bar-header item-input-inset" style='margin-top: -4px;'>
+          <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input ng-change="vm.queryMankeepKeyWord($event)" onChange="vm.queryMankeepKeyWord($event)" type="search" ng-model='vm.query.mKeepMark' placeholder="请输入您要查询的人脉">
+          </label>
+          <button class="button button-clear" nav-transition="ios" nav-direction="back" ui-sref='tab.two'>
+            取消
+          </button>
+        </div>
+      </div>
+    </div>
+  </ion-nav-title>
+
+  <ion-content class="bg-gray xn-content">
+
+
+    <div class="text-center gap-30" ng-if="vm.query.tag==2 && vm.query.dataList.length == 0">
+      <h4 class="text-gray">您的搜索暂无相应的人脉，敬请期待</h4>
+      <h4 class="text-gray gap-5">请搜索您感兴趣的行业去认识您需要的人脉</h4>
+      <h4 class="text-gray gap-5">卡得与您同在，助力您的梦想</h4>
+    </div>
+
+    <div class= "recently-search gap-10" ng-if='vm.query.tag==1'>
+      <h3 class='pa-left-10 pa-top-5'>
+        <img style="width:25px" class="img_icon" src="../../img/search-recommend.svg" alt="">
+        <span style="font-size:18px;">搜索建议</span>
+      </h3>
+      <div class = "recently-search-content gap-8">
+        <ion-list>
+          <ion-item style="font-size:16px">房屋租赁 求租房 房屋出租</ion-item>
+          <ion-item style="font-size:16px">求职 找猎头 找牛人</ion-item>
+          <ion-item style="font-size:16px">二手货物出售</ion-item>
+          <ion-item style="font-size:16px">货物批发 货物托运 搬家</ion-item>
+          <ion-item style="font-size:16px">私活外包 接项目</ion-item>
+          <ion-item style="font-size:16px">运营方案设计</ion-item>
+        </ion-list>
+      </div>
+    </div>
+
+    <ion-list  ng-if='vm.query.tag==2 && vm.query.dataList.length != 0' ng-repeat='item in vm.query.dataList track by $index' >
+      <ion-item  style="height:123px"  class="item-remove-animate item-icon-right" ui-sref='tab.searchResult({id:item.id})'>
+        <div class="item-avatar" style="padding-left:58px">
+          <img class="contact-img" style="max-height:70px; max-width:62px" ng-src="../img/ben.png">
+          <p class="contact-item-content-title contact-item-content" style="font-size:16px">{{item.userCname}}</p>
+          <p class="contact-item-content" style="font-size:16px">主营业务: {{item.business}}</p>
+          <p class="contact-item-content" style="font-size:16px">公司业务: {{item.companyMark}}</p>
+          <p class="contact-item-content" style="font-size:16px">个人业务: {{item.cardMark}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll ng-if='vm.hasMore' icon="ion-loading-c" immediate-check="false" on-infinite="vm.loadMore()"> </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

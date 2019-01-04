@@ -1,0 +1,17 @@
+<ion-view hide-tabs="true">
+    <ion-nav-title>
+        <div class="bar bar-positive">
+            <div class="button-bar nav-bar">
+                <a class="button">帮助详情页</a>
+            </div>
+        </div>
+    </ion-nav-title>
+    <ion-content class="xn-content gap-8">
+        <p style="font-size: 18px; margin-top:12px; margin-left:16px; margin-bottom:18px;">{{vm.query.Title}}：</p>
+        <div ng-repeat='item  in  vm.query.Content' style="margin-top:8px;">
+            <span style="margin-left:32px; font-size: 16px;">
+                {{item}}
+            </span>
+        </div>
+    </ion-content>
+</ion-view>

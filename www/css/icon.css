@@ -1,0 +1,44 @@
+.ion-card-model:before {
+  content: url("../img/card-model.svg");
+}
+
+.ion-card-personal:before {
+  content: url("../img/card-personal.svg");
+}
+
+.ion-card-compnay:before {
+  content: url("../img/card-company.svg");
+}
+
+.ion-like:before {
+  content: url("../img/icon-good.svg");
+}
+
+.ion-setup:before {
+  content: url("../img/setup.svg");
+}
+
+.ion-help-and-feedback:before{
+  content: url("../img/help.svg");
+}
+
+.ion-feedback:before {
+  content: url("../img/feedback.svg");
+}
+
+.ion-interpersonal-connections:before {
+  content: url("../img/renmai-search.svg");
+}
+
+.ion-recently-search:before {
+  content: url("../img/recently-search.svg");
+}
+
+.ion-search-recommend:before {
+  content: url("../img/search-recommend.svg");
+}
+
+.ion-company-query:before {
+  content: url("../img/company-query.svg");
+}
+

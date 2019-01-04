@@ -1,0 +1,81 @@
+.contact-img {
+  max-width:70px;
+  max-height:80px;
+}
+
+.contact-item-content{
+  padding-left:9px;
+  font-size:23px;
+}
+
+.contact-item-content-title {
+  font-weight:bolder;
+  font-size:28px;
+}
+
+.contact-item-content-server {
+  padding-right: 1750px;
+}
+
+.item-avatar{
+  padding-left: 0px;
+}
+
+.contact-line {
+  border-bottom: solid 1px #f2f2f2;
+}
+
+.contact-info {
+  font-size: 12px;
+  color:#00c3b3;
+}
+
+.contact-comment {
+  font-size: 12px;
+  color:#00c3b3;
+}
+
+.interpersonal-connections-search {
+  height: 70px;
+  width: 100px;
+  margin-top: 100px;
+  background-color: white;
+  border-width: 15px 5px 15px 5px;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: #000 #000 #000 #000;
+}
+
+.img_icon {
+  width: 25px;
+  float: left;
+}
+
+.search-recommend-content {
+  height:100%;
+  width:100%;
+  background-color:white;
+}
+
+.search-recommend-content ul{
+  padding-top:6px;
+  margin:6px;
+}
+
+.search-recommend-content ul li{
+  margin-top:6px;
+  list-style:none;
+  margin-left:6px;
+  width:auto;
+  display:inline;
+  font-size:16px;
+}
+
+.recently-search-content {
+  font-size: 16px;
+}
+
+
+
+
+

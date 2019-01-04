@@ -1,0 +1,33 @@
+<ion-view hide-tabs="true" hide-back-button="true">
+    <ion-nav-title>
+        <div class="bar bar-positive">
+            <div class="button-bar nav-bar">
+                <div class="bar bar-header item-input-inset" style='margin-top: -4px;'>
+                    <label class="item-input-wrapper">
+                        <i class="icon ion-ios-search placeholder-icon"></i>
+                        <input ng-keyup="vm.queryComByKeyWord($event)" ng-change="vm.queryComByKeyWord($event)" type="search" ng-model='vm.query.companyName'
+                               placeholder="请输入您要查询的公司名字">
+                    </label>
+                    <button class="button button-clear" nav-transition="ios" nav-direction="back" ui-sref='tab.four'>
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ion-nav-title>
+    <ion-content>
+        <div>
+            <div>
+                <ul class="list" ng-if='vm.query.tag==5'>
+                    <li class="item" ng-repeat='item in vm.query.data track by $index' ui-sref='tab.dt_detail({name:item.Name})'>
+                        <p>公司名称：{{item.Name}}</p>
+                        <p>公司法人：{{item.OperName}}</p>
+                        <p>公司状态：{{item.Status}}</p>
+                        <p>公司信用代码：{{item.No}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ion-content>
+    <template id=""></template>
+</ion-view>

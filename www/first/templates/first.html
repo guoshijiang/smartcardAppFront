@@ -1,0 +1,67 @@
+<ion-view hide-back-button='true'>
+
+	<ion-nav-title>
+		<div class="bar bar-positive">
+			<div class="button-bar nav-bar">
+				<a class="button">个人名片</a>
+			</div>
+		</div>
+	</ion-nav-title>
+	<ion-nav-buttons side="right">
+		<button class="button button-clear ion-navicon button-large" style="font-size: 26px;" ng-click="toggleDropDown()"></button>
+	</ion-nav-buttons>
+
+	<ion-content class="bg-gray xn-content">
+		<ion-list style="position: absolute;top: 4px;right: 4px;" ng-if="listModal">
+			<ion-item ui-sref="tab.cardModel" ng-click="gocardModel()">
+				名片模板选择
+			</ion-item>
+			<ion-item ui-sref="tab.companyCard" ng-click="gocompanyCard()">
+				公司名片
+			</ion-item>
+		</ion-list>
+		<div class="book preserve-3d">
+			<div class="book-page-box preserve-3d" ng-repeat="item in slidebox track by $index" ng-class="{'flip-animation':item.active}" ng-click="flipBook(item,$index)">
+				<h3 style="float: right;">查看详情{{$index}}</h3>
+				<div class="t_party">
+					<div class="qrlogo">
+						<img class="qrcode" src="../../img/recomment-one.jpg" alt="" />
+						<div class="logo">
+							<img style="height: 100%;" ng-src="{{item.list.logoUrl}}"/>
+						</div>
+					</div>
+					<div class="postionbox">
+						<h1>{{item.list.userCname}}</h1>
+						<p>{{item.list.position}}</p>
+					</div>
+				</div>
+				<div class="b_party">
+					<p>p:{{item.list.phone}}</p>
+					<p>e:{{item.list.email}}</p>
+					<p>fax:{{item.list.email}}</p>
+					<p>{{item.list.companyCaddress}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="list gap-4">
+			<a nav-transition="ios" nav-direction="forward" class="item" style="text-align: center">
+				<p class="font-card">翻一翻可以看到名片背部的个人和公司的相关</p>
+				<p class="font-card">信息，滑一滑可以查看自己的下一张名片</p>
+			</a>
+		</div>
+
+		<div class="add-card list gap-4">
+			<a nav-transition="ios" nav-direction="forward" href="#/tab/addCard" class="item">
+				<span class="font-card">添加名片</span>
+			</a>
+		</div>
+
+		<div class="add-card-speed list gap-4">
+			<a nav-transition="ios" nav-direction="forward" href="#/tab/addCard" class="item">
+				<span class="font-card">快速添加名片</span>
+			</a>
+		</div>
+
+	</ion-content>
+
+</ion-view>

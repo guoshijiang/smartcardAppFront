@@ -1,0 +1,43 @@
+<ion-view hide-back-button='true'>
+  <ion-nav-title>
+    <div class="bar bar-positive">
+      <div class="button-bar nav-bar">
+        <a class="button" nav-transition="ios" nav-direction="enter">我的人脉</a>
+        <a class = "ion-interpersonal-connections"  href="#/tab/interpesonSearch"></a>
+      </div>
+    </div>
+  </ion-nav-title>
+  <ion-content>
+
+     <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <div class="text-center gap-50" ng-if="vm.dele.isLoading">
+      <h4 class="text-gray">数据加载中...</h4>
+    </div>
+
+    <div class="text-center gap-30" ng-if="!vm.dele.isLoading && vm.query.data.length == 0">
+      <h4 class="text-gray">您当前暂无相应的人脉</h4>
+      <h4 class="text-gray gap-5">请搜索您感兴趣的行业去认识您需要的人脉</h4>
+      <h4 class="text-gray gap-5">卡得与您同在，助力您的梦想</h4>
+    </div>
+
+    <ion-list  ng-repeat='item in vm.query.data track by $index'>
+      <ion-item  style="height:123px"  class="item-remove-animate item-icon-right" ui-sref='tab.detail({id:item.id})'>
+        <div class="item-avatar" style="padding-left:58px">
+          <img class="contact-img" style="max-height:70px; max-width:62px" ng-src="../img/ben.png">
+          <p class="contact-item-content-title contact-item-content" style="font-size:16px">{{item.mkeepName}}</p>
+          <p class="contact-item-content" style="font-size:16px">{{item.mkeepAddress}}</p>
+          <p class="contact-item-content" style="font-size:16px">{{item.mkeepBusiness}}</p>
+        </div>
+        <div class="contact-info">{{item.mkeepName}}的标签: {{item.mkeepTag}}</div>
+        <div class="contact-line"></div>
+        <div class="contact-comment">了解更多: 点击查看{{item.mkeepName}}的详细资料</div>
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll ng-if='vm.hasMore' icon="ion-loading-c" immediate-check="false" on-infinite="vm.loadMore()"> </ion-infinite-scroll>
+
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,80 @@
+<ion-view hide-tabs="true>
+
+  <ion-nav-title>
+    <div class="bar bar-positive">
+      <div class="button-bar nav-bar">
+        <a class="button" nav-transition="ios" nav-direction="enter">名片详情</a>
+      </div>
+    </div>
+  </ion-nav-title>
+
+  <ion-content class="xn-content">
+  	<ion-list>
+      <ion-item  style="height:123px" class="item-remove-animate item-icon-right" type="item-text-wrap">
+        <div class="item-avatar" style="padding-left:58px">
+          <img class="contact-img" style="max-height:70px; max-width:62px" ng-src="{{vm.query.logoUrl}}">
+          <p class="contact-item-content-title contact-item-content" style="font-size:16px">{{vm.query.userCname}}</p>
+          <p class="contact-item-content" style="font-size:16px">{{vm.query.business}}</p>
+          <p class="contact-item-content" style="font-size:16px">{{vm.query.cardMark}}</p>
+        </div>
+        <div class="contact-info">个人主营业务: {{vm.query.cardMark}}</div>
+        <div class="contact-line"></div>
+        <div class="contact-comment">公司主营业务: {{vm.query.companyMark}}</div>
+      </ion-item>
+
+      <div style="font-size:15px; margin-left:15px; color:#06b1a4 ">
+        <div class="gap-20" style="font-size: 16px; font-weight:bold; color: black">
+          人脉联系方式
+        </div>
+        <div class="gap-5">
+          手机号码: {{vm.query.phone}}
+        </div>
+        <div class="gap-5">
+          电话号码: {{vm.query.telphone}}
+        </div>
+        <div class="gap-5">
+          微信: 1294928442
+        </div>
+        <div class="gap-5">
+          QQ: 20123762
+        </div>
+        <div class="gap-5">
+          传值: {{vm.query.fax}}
+        </div>
+        <div class="gap-5">
+          邮箱: {{vm.query.email}}
+        </div>
+
+        <div class="gap-30" style="font-size: 16px; font-weight:bold; color: black">
+          人脉其他信息
+        </div>
+
+        <div class="gap-5">
+          公司名字: {{vm.query.companyCname}}
+        </div>
+
+        <div class="gap-5">
+          公司地址: {{vm.query.companyCaddress}}
+        </div>
+
+        <div class="gap-5">
+          公司主要业务: {{vm.query.companyMark}}
+        </div>
+
+        <div class="gap-5">
+          公司简介: {{vm.query.companyCpor}}
+        </div>
+
+        <div class="gap-5">
+          添加时间: {{vm.query.createTime}}
+        </div>
+      </div>
+
+      <div class="gap-50" style="text-align: center">
+        <button style="width:65%; height:38px; border: solid 1px #f2f2f2; background-color:white; font-size:18px; color:#0c60ee " >添加到我的人脉</button>
+      </div>
+
+    </ion-list>
+  </ion-content>
+</ion-view>
+
