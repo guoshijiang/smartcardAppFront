@@ -1,6 +1,6 @@
 angular.module('rsc.development.config', []).constant('ENV', {
   api: {
-    Home: 'http://10.23.3.183:8080'
+    Home: 'http://120.78.206.130:8080'
   },
   encode: false, // false 不加密
   debug: true,
@@ -9,5 +9,5 @@ angular.module('rsc.development.config', []).constant('ENV', {
   local: window.localStorage,
   // storage: window.localStorage,
   scroll: false,
-  imgUrl: 'http://10.23.3.183:8989'
+  imgUrl: 'http://120.78.206.130:8989'
 })

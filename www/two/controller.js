@@ -11,7 +11,7 @@ angular
             data:[],
             isLoading:true,
             hasMore:true
-        }
+        };
         vm.findMkeepByUserid = function() {
             TwoServe.findMkeepByUserid({userId:vm.query.userId, status: vm.query.status,
                 page:vm.query.page, pageSize:vm.query.pageSize}).
@@ -25,7 +25,7 @@ angular
             .finally(function() {
                 vm.query.isLoading = false;
             });
-        }
+        };
 
         $scope.doRefresh = function() {
             vm.query = {
@@ -41,7 +41,7 @@ angular
             $timeout(function() {
                 $scope.$broadcast('scroll.refreshComplete')
             }, 300);
-        }
+        };
 
         vm.loadMore = function() {
             vm.query.page += 1
@@ -49,7 +49,7 @@ angular
             $timeout(function() {
                 $scope.$broadcast('scroll.infiniteScrollComplete')
             }, 300);
-        }
+        };
 
         $scope.$on('$ionicView.beforeEnter', function() {
             $scope.doRefresh();
@@ -66,7 +66,7 @@ angular
                         vm.query = res.result;
                     }
                 });
-        }
+        };
         $scope.$on('$ionicView.beforeEnter', function() {
             vm.init();
         });
@@ -81,7 +81,7 @@ angular
           mKeepMark:'',
           dataList:[],
           hasMore:true
-      }
+      };
       vm.queryMankeepKeyWord = function() {
           if (!vm.query.mKeepMark) {
               vm.query.dataList = [];
@@ -103,7 +103,7 @@ angular
                       vm.query.dataList = vm.query.dataList.concat(res.result.list);
                   }
               });
-      }
+      };
 
       vm.loadMore = function() {
           vm.query.page += 1
@@ -111,7 +111,7 @@ angular
           $timeout(function() {
               $scope.$broadcast('scroll.infiniteScrollComplete');
           }, 300);
-      }
+      };
 
       $scope.$on('$ionicView.beforeEnter', function() {
           vm.query.tag = 1;
@@ -128,8 +128,8 @@ angular
                         vm.query = res.result;
                     }
                 });
-        }
+        };
         $scope.$on('$ionicView.beforeEnter', function() {
             vm.init();
         });
-	})
+	});

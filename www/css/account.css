@@ -1,28 +1,333 @@
+.login-banner{
+    padding:0px;
+    margin:0px;
+    text-align:center;
+    background-color: #354bb2;
+}
+
+.login-banner-img{
+    width: 100%;
+    height: 100%;
+    text-align:center;
+}
+
+.login-item {
+    margin-top: 12px;
+}
+
+.login-order{
+    width: 100%;
+    height: 65px;
+    background-color: #354bb2;
+    font-size: 21px;
+    color: #4b68f2;
+    text-align: center;
+    font-family:"Droid Sans Mono Dotted" ;
+    font-weight: normal;
+}
+
 .inputLogin{
-    width: 93%;
+    margin-left:20px;
+    margin-top:10px;
     text-align:center;
-    margin: auto;
 }
 
-.loginButton{
+.login-input{
+    height:85px;
+    border-bottom:solid 1px #f2f2f2;
+}
+
+.input-items {
+    width:88%;
+    margin-top:30px;
+    float:left;
+    display:inline;
+}
+
+.input-items input {
+    font-size:20px;
+    color:#b8c5ff;
+}
+
+.login-input-img {
+    width:12%;
+    margin-top:30px;
+    float:left;
+    display:inline;
+}
+
+.login-input-img-phnoe {
+    float:left;
+    width: 24px;
+    height:40px;
+}
+
+.login-input-img-block{
+    float:left;
+    width: 24px;
+    height:32px;
+}
+
+.forget-password{
+    margin-top:18px;
+    float:left;
+    margin-left:46px;
+    width:100%;
+    height:21px;
+    margin-bottom:36px;
+}
+
+.forget-password a {
+    font-size:18px;
+    color: #9aa5d8;
+}
+
+.login-register-button {
+    width:100%;
+    height:80px;
+    margin-top:36px;
+}
+
+.login-button {
+    width:44%;
+    height:45px;
+    padding-top:9px;
+    float:left;
+    display:inline;
+    border: solid 1px #354bb2;
+    border-radius:9px;
     text-align:center;
+    vertical-align: middle;
+    font-size:21px;
+}
+
+.login-button a {
+    color:#354bb2;
+    font-family:"Droid Sans Mono Dotted" ;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.insert-space {
+    width:4%;
+    height:45px;
+    float:left;
+    display:inline;
+}
+
+.register-button {
+    width:44%;
+    height:45px;
+    padding-top:9px;
+    float:left;
+    display:inline;
+    border:solid 1px #354bb2;
+    border-radius:9px;
+    text-align:center;
+    vertical-align:middle;
+    font-size:21px;
+    color:#354bb2;
+}
+
+.register-button a {
+    margin-top:21px;
+    color:#354bb2;
+    font-family:"Droid Sans Mono Dotted" ;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.third-way{
+    width:90%;
+    margin-top:62px;
+    margin-left:5%;
+    text-align:center;
+}
+
+.line-content {
+    line-height:1px;
+    border-left:90px solid #ddd;
+    border-right:90px solid #ddd;
+    text-align:center;
+    font-size:16px;
+    color:#d48dee;
+}
+
+.qq-button {
+    width:44%;
+    height:45px;
+    margin-top:40px;
+    float:left;
+    display:inline;
+    text-align:center;
+}
+
+.weichat-button{
+    width:44%;
+    height:45px;
+    margin-top:40px;
+    float:left;
+    display:inline;
+    text-align:center;
+}
+
+.register-input {
+    margin-top:6px;
+    height:50px;
+    border-bottom:solid 1px #f2f2f2;
+}
+
+.register-input-img-phnoe {
+    float:left;
+    width: 24px;
+    height:45px;
+}
+
+.register-input-img{
+    width:12%;
+    float:left;
+    display:inline;
+}
+
+.register-input-items{
+    margin-top:6px;
+    width: 58%;
+    float:left;
+    display:inline;
+}
+
+.register-input-items input {
+    font-size:18px;
+}
+
+.register-veryfy-code {
+    width:27%;
+    height:35px;
+    margin-top:10px;
+    border:solid 1px #f2f2f2;
+    border-radius:12px;
+    background-color:#354bb1;
+    color:#0c60ee;
+    float:left;
+    display:inline;
+}
+
+.register-space {
+    width:3%;
+    float:left;
+    display:inline;
+}
+
+.register-veryfy-code span {
+    height:30px;
+    line-height:32px;
+    color:white;
+    font-size:14px;
+    font-family:"Droid Sans Mono Dotted" ;
+    font-weight:normal;
+    text-align:center;
+}
+
+.register-input-imgs {
+    width:12%;
+    float:left;
+    display:inline;
+}
+
+.register-input-img-code {
+    width: 24px;
+    height:45px;
+    float:left;
+}
+
+.register-input-items-other {
+    width:88%;
+    float:left;
+    display:inline;
+}
+
+.register-input-items-other input {
+    font-size:18px;
+}
+
+.register-input-img-pwd{
+    float:left;
+    width: 24px;
+    height:32px;
+}
+
+.register-confirm {
+    width:100%;
+    height:45px;
+    text-align:center;
+}
+
+.register-buttons {
+    width:68%;
+    height:45px;
+    float:right;
+    display:inline;
+    margin-top:90px;
+    border:solid 1px #354bb1;
+    border-radius:12px;
+}
+
+.confirm-space-one{
+    width:16%;
+    height:45px;
+    float:right;
+    display:inline;
+    margin-top:90px;
+}
+
+.confirm-space-two{
+    width:16%;
+    height:45px;
+    float:right;
+    display:inline;
+    margin-top:90px;
+}
+
+.register-buttons span {
     height:38px;
-    vertical-align:38px;
-
-    width:60%;
-    background-color: #f2f2f2;
+    line-height:39px;
+    background-color:white;
+    font-size:18px;
+    color:#0c60ee;
 }
 
-.loginButton a{
-    background-color:#f2f2f2;
-    border: solid 1px #f2f2f2;
-    height:28px;
-    width: 80%;
+.register-input-img-name {
+    width:32px;
+    height:53px;
+    float:left;
+}
+
+.register-input-items-other-card {
+    width:88%;
+    float:left;
+    margin-top:10px;
+    display:inline;
+}
+
+.register-input-items-other-card input {
+    font-size:18px;
+}
+
+.register-submit {
+    margin-top:45px;
     text-align:center;
-    font-size: 18px;
-    color: white;
 }
 
-.AccountLoginButton{
-    font-size: 25px;
+.register-submit-button{
+
+}
+
+.register-submit-button button {
+    width:65%;
+    height:45px;
+    border: solid 1px #354bb1;
+    background-color:white;
+    font-size:18px;
+    color:#0c60ee;
+    border-radius:12px;
 }

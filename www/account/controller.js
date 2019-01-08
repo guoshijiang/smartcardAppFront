@@ -89,18 +89,14 @@ angular
         };
 
         vm.getCode = function() {
-            if(!vm.register.username || !vm.register.password || !vm.register.confirmPwd || !vm.register.phone){
-                ionicToast.show('参数为空，请检查后输入', 'middle', false, 1500);
-                return ;
-            }
-            if(vm.register.password !== vm.register.confirmPwd) {
-                ionicToast.show('两次输入的密码不一样，请检查', 'middle', false, 1500);
+            if(!vm.register.phone){
+                ionicToast.show('您输入的手机号为空，请检查后输入', 'middle', false, 1500);
                 return ;
             }
             AccountServe.getVerifyCode({phone:vm.register.phone}).then(
                 function(res) {
                     if (res.code === 400) {
-                        ionicToast.show('手机号码为空,请输入手机号', 'middle', false, 1500);
+                        ionicToast.show('您输入的手机号为空，请检查后输入', 'middle', false, 1500);
                         return;
                     } else if (res.code === 500) {
                         ionicToast.show(res.message, 'middle', false, 1500);
@@ -113,7 +109,7 @@ angular
         };
 
         vm.registerInfo = function () {
-            if(!vm.register.username || !vm.register.password || !vm.register.confirmPwd || !vm.register.phone || !vm.register.verifyCode){
+            if(!vm.register.password || !vm.register.confirmPwd || !vm.register.phone || !vm.register.verifyCode){
                 ionicToast.show('参数为空，请检查后输入', 'middle', false, 1500);
                 return ;
             } else {
@@ -122,7 +118,6 @@ angular
                     return ;
                 } else {
                     if(vm.register.verifyCode === localStorage.getItem("vcode")){
-                        localStorage.setItem("username", vm.register.username);
                         localStorage.setItem("password", vm.register.password);
                         localStorage.setItem("phone", vm.register.phone);
                         localStorage.setItem("verifyCode", vm.register.verifyCode);
@@ -143,12 +138,11 @@ angular
             realName:'',
             position:'',
             companyName:'',
-            cardMark:'',
             personalMark:''
         };
 
         vm.enterCard = function() {
-            if(!vm.registerCtrl.realName || !vm.registerCtrl.position || !vm.registerCtrl.companyName || !vm.registerCtrl.cardMark || !vm.registerCtrl.personalMark){
+            if(!vm.registerCtrl.realName || !vm.registerCtrl.position || !vm.registerCtrl.companyName || !vm.registerCtrl.personalMark){
                 ionicToast.show('参数为空，请检查后输入', 'middle', false, 1500);
                 return ;
             }
@@ -181,7 +175,7 @@ angular
                             companyCpor: '未知',
                             companyEpor: '未知',
                             companyMark: '未知',
-                            cardMark:vm.registerCtrl.cardMark,
+                            cardMark:'未知',
                             fax: '未知',
                             logoUrl: res.result.imgurl,
                             business: vm.registerCtrl.personalMark,

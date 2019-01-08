@@ -2,43 +2,63 @@
     <ion-nav-title>
         <div class="bar bar-positive">
             <div class="button-bar nav-bar">
-                <a class="button">账号注册</a>
+                <a class="button">注册</a>
             </div>
         </div>
     </ion-nav-title>
 
     <ion-content class="xn-content">
         <div  class="inputLogin gap-10">
-            <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
-                <input ng-model="vm.register.username" style="width:65%; height:42px; margin-left:3px;" type="text" placeholder="请输入用户名">
+
+            <div class="register-input">
+                <div class="register-input-img">
+                    <img class="register-input-img-phnoe" src="/img/icon_phone.png" />
+                </div>
+                <div class="register-input-items">
+                    <input ng-model="vm.register.phone" type="text" placeholder="请输入您的手机号">
+                </div>
+                <div class="register-veryfy-code">
+                    <span ng-click="vm.getCode()">获取验证码</span>
+                </div>
+                <div class="register-space"></div>
             </div>
 
-            <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
-                <input ng-model="vm.register.password"  style="width:65%; height:42px; margin-left:3px;" type="password" placeholder="请输入密码">
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-code" src="/img/icon_Code_xhdpi.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.register.verifyCode" type="text" placeholder="请输入已获取的验证码">
+                </div>
             </div>
 
-            <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
-                <input ng-model="vm.register.confirmPwd" style="width:65%; height:42px; margin-left:3px;" type="password" placeholder="请再次输入密码">
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="/img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.register.password" type="password" placeholder="请输入密码">
+                </div>
             </div>
 
-            <div class= "gap-5" style="border-bottom:solid 1px #f2f2f2;">
-                <input ng-model="vm.register.phone" style="width:65%; height:42px; margin-left:3px;" type="text" placeholder="请输入您的手机号码">
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="/img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.register.confirmPwd" type="password" placeholder="请再次输入密码">
+                </div>
             </div>
-
-            <div class="gap-5" style="border-bottom:solid 1px #f2f2f2;" >
-                <input ng-model="vm.register.verifyCode" style="width:65%; height:42px; margin-left:3px; display: inline-block" type="text" placeholder="请输入您的验证码">
-                <button ng-click="vm.getCode()" style="width:30%; height:28px;border:solid 1px #f2f2f2; background-color:white; color:#0c60ee;display:inline-block">获取验证码</button>
-            </div>
-
-            <div ng-click="vm.registerInfo()" class="gap-20">
-                <button  style="width:65%; height:38px; border: solid 1px #f2f2f2; background-color:white; font-size:18px; color:#0c60ee " >立即注册</button>
-            </div>
-
-            <div class="button-bar nav-bar">
-                <a class="button" style="font-size:12px" href="#/account">已有账户，去登陆</a>
-            </div>
-
         </div>
+
+        <div class="register-confirm">
+            <div class="confirm-space-one"></div>
+            <div class="register-buttons" ng-click="vm.registerInfo()">
+                <span>下一步</span>
+            </div>
+            <div class="confirm-space-two"></div>
+        </div>
+
     </ion-content>
 </ion-view>
 

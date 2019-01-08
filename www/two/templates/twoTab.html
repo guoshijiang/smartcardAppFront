@@ -26,13 +26,11 @@
       <ion-item  style="height:123px"  class="item-remove-animate item-icon-right" ui-sref='tab.detail({id:item.id})'>
         <div class="item-avatar" style="padding-left:58px">
           <img class="contact-img" style="max-height:70px; max-width:62px" ng-src="../img/ben.png">
-          <p class="contact-item-content-title contact-item-content" style="font-size:16px">{{item.mkeepName}}</p>
+          <p class="contact-item-content-title contact-item-content" style="font-size:24px; color: #000000; font-family:Roboto; font-weight:normal">{{item.mkeepName}}</p>
           <p class="contact-item-content" style="font-size:16px">{{item.mkeepAddress}}</p>
           <p class="contact-item-content" style="font-size:16px">{{item.mkeepBusiness}}</p>
+          <p class="contact-item-content" style="font-size:16px">{{item.mkeepTag}}</p>
         </div>
-        <div class="contact-info">{{item.mkeepName}}的标签: {{item.mkeepTag}}</div>
-        <div class="contact-line"></div>
-        <div class="contact-comment">了解更多: 点击查看{{item.mkeepName}}的详细资料</div>
       </ion-item>
     </ion-list>
 

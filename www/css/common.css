@@ -492,15 +492,15 @@ small {
 /*头部*/
 
 .bar.bar-positive {
-    background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 0%, transparent 0%);
-    border-color: #00c4b6; 
+    background-image: linear-gradient(0deg, #354bb1, #354bb1 0%, transparent 0%);
+    border-color: #354bb1;
     /* 顶部bar的背景颜色控制 */
-    background: #00c4b6;  
+    background: #354bb1;
     /* background: -webkit-linear-gradient(#db4226, #ef473a);
     background: -o-linear-gradient(#db4226, #ef473a);
     background: -moz-linear-gradient(#db4226, #ef473a);
     background: linear-gradient(#db4226, #ef473a); */
-    color: rgba(139, 87, 42, .5);
+    color: rgba(53, 75, 177, .5);
 }
 
 .bar.bar-positive .title {
@@ -517,17 +517,17 @@ small {
 .nav-bar .button {
     border: none;
     background: none;
-    color: rgba(139, 87, 42, .5);
+    color: rgba(53, 75, 177, .5);
     font-size: 16px;
     font-weight: 600;
 }
 
 .bar.bar-stable {
-    background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 0%, transparent 0%);
-    border-color: #00c4b6;
+    background-image: linear-gradient(0deg, #354bb1, #354bb1 0%, transparent 0%);
+    border-color: #354bb1;
     /* background: -webkit-linear-gradient(#db4226, #ef473a); */
     /* 顶部bar的颜色背景设置 */
-    background-color: #00c4b6;  
+    background-color: #354bb1;
     /* Safari 5.1 - 6.0 */
     /* background: -o-linear-gradient(#db4226, #ef473a); */
     /* Opera 11.1 - 12.0 */
@@ -701,8 +701,8 @@ small {
 .tabs.tabs-positive {
     border-color: #eaeaea;
     background-color: #fff;
-    background-image: linear-gradient(0deg, #eaeaea, #eaeaea 80%, transparent 80%);
-    color: #999;
+    background-image: linear-gradient(0deg, #354bb1, #354bb1 80%, transparent 80%);
+    color: #354bb1;
 }
 
 .tab-num {
