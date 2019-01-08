@@ -23,19 +23,43 @@
     </div>
 
     <ion-list  ng-repeat='item in vm.query.data track by $index'>
-      <ion-item  style="height:123px"  class="item-remove-animate item-icon-right" ui-sref='tab.detail({id:item.id})'>
-        <div class="item-avatar" style="padding-left:58px">
-          <img class="contact-img" style="max-height:70px; max-width:62px" ng-src="../img/ben.png">
-          <p class="contact-item-content-title contact-item-content" style="font-size:24px; color: #000000; font-family:Roboto; font-weight:normal">{{item.mkeepName}}</p>
-          <p class="contact-item-content" style="font-size:16px">{{item.mkeepAddress}}</p>
-          <p class="contact-item-content" style="font-size:16px">{{item.mkeepBusiness}}</p>
-          <p class="contact-item-content" style="font-size:16px">{{item.mkeepTag}}</p>
+      <ion-item  class="item-remove-animate item-icon-right" ui-sref='tab.detail({id:item.id})'>
+
+        <div class="mankeep">
+
+          <div class="mankeep-pho">
+            <div class = "mankeep-pho-img">
+              <img class="pho-img" ng-src="../img/ben.png">
+            </div>
+          </div>
+
+          <div class="mankeep-info">
+            <div class="mankeep-info-pname">
+              <div class="info-name">
+                <p>{{item.mkeepName}}</p>
+              </div>
+              <div class="info-position">
+                <p>{{item.mkeepBusiness}}</p>
+              </div>
+            </div>
+
+            <div class="mankeep-company">
+              <p>{{item.companyCname}}</p>
+            </div>
+
+            <div class="mankeep-address">
+              <p >{{item.mkeepAddress}}</p>
+            </div>
+
+            <div class="mankeep-tag">
+              <p>{{item.mkeepTag}}</p>
+            </div>
+
+          </div>
+
         </div>
       </ion-item>
     </ion-list>
-
     <ion-infinite-scroll ng-if='vm.hasMore' icon="ion-loading-c" immediate-check="false" on-infinite="vm.loadMore()"> </ion-infinite-scroll>
-
   </ion-content>
-
 </ion-view>
