@@ -6,7 +6,7 @@ angular
   .controller('ThreeTabCtrl', function($scope, $state) {
     var vm = ($scope.vm = this)
     vm.dele = {
-      tab: 'shangye'
+      tab: 'new'
     }
     vm.changeTag = function(type) {
       vm.dele.tab = type

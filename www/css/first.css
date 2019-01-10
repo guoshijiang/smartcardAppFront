@@ -1,71 +1,83 @@
-
-.book{
-	position: relative;
-	height: 250px;
+.img-box{
+	display:flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
-	margin: 10px 0;
-	transform: rotateX(5deg);
+	height: 180px;
+	border-bottom:1px solid #ccc;
 }
-.book-page-box{
+.item-img {
+	height: 120px;
+	width:120px;
+}
+.list-footer .item{
+	border-color: #fff;
+}
+.opt-group{
+	display: flex;
+	justify-content: space-between;
+}
+.opt-group button{
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+}
+.btn-left{
+	background: url(../img/btn_Turn_normal.png) no-repeat center;
+}
+.btn-right{
+	background: url(../img/btn_Change_normal.png) no-repeat center;
+}
+.list-card{
 	position: absolute;
-	height: 100%;
-	width: 99%;
-	top: 0;
-	left: 0;
-	transform-origin: 0 50%;
-	border: 1px solid #ccc;
-	background: url(../../img/cardbg.jpg) no-repeat;
-	background-size: 100% 100%;
-	padding: 10px;
-	box-shadow: 1px 1px 1px #ccc;
-	
-}
-.book-page-box:first-child{
-	box-shadow: 2px 2px 1px #eee;
+	width:100%;
 }
 .preserve-3d{
 	transform-style: preserve-3d;
+	perspective: 3000px
 }
-@keyframes flipBook{
-	0%{
-		transform: perspective(3000px) rotateY(0deg);
-	}
-	100%{
-		transform: perspective(3000px) rotateY(-180deg);
-	}
+.list-card:nth-child(1){
+	transform: translate(-70%,-50px) scale(.6) translateZ(-200px);
+
 }
-.flip-animation{
-	animation:flipBook 10s ease-in-out forwards;
-}
-.t_party{
-	margin: 28px 0 10px;
-	border-bottom: 1px solid #A5B0B9;
-}
-.qrlogo{
-	display: flex;
-	align-items: center;
-}
-.qrcode{
-	height: 64px;
-	width: 64px;
-}
-.logo{
-	margin-left: 10px;
-	flex: 1;
-	height: 64px;
-}
-.person-label{
-	width: 100%;
-	margin:10px 0;
-	display: flex;
-	align-items: center;
-	flex-wrap:wrap
-}
-.person-label span{
-	margin: 4px 4px;
-	background: #CCE4F7;
-	color: #8BB0C2;
-	padding: 5px;
-	border-radius: 4px;
+.list-card:nth-child(2){
+	transform:translateY(-70px) scale(.7);
 	
+
+}
+.list-card:nth-child(3){
+	transform: translate(70%,-50px) scale(.6) translateZ(-200px);
+}
+.animation1{
+	animation: pageTwo 1s 1;
+}
+.animation2{
+	animation: pageThree 1s 1;
+}
+@keyframes pageTwo{
+		from{
+			transform:translateY(-70px) scale(.7);
+		}
+		to{
+			transform: translate(-70%,-50px) scale(.6) translateZ(-200px);
+		}
+	}
+@keyframes pageThree{
+		from{
+			transform: translate(70%,-50px) scale(.6) translateZ(-200px);
+		}
+		to{
+			transform:translateY(-70px) scale(.7) translateZ(0px);
+		}
+	}
+.menu-card{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding-bottom: 10px;
+}
+.menu-card .item{
+	text-align: center;
+	padding: 15px 0;
 }

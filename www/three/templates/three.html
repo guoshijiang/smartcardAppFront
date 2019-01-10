@@ -27,81 +27,64 @@
         <div class="row row-wrap xn-first">
           <div class='col col-20 ' ui-sref='tab.homeWork'>
             <span class='icon_box icon_bg'>
-              <img src="img/snatch-treasure.png" alt="">
+              <img src="img/icon_Activities.png" alt="">
             </span>
             <h4>活动专区</h4>
           </div>
           <div class='col col-20 ' ui-sref='tab.customerInfo'>
             <span class='icon_box icon_bg'>
-              <img src="img/customer-source.png" alt="">
+              <img src="img/icon_Business.png" alt="">
             </span>
             <h4>商务动态</h4>
           </div>
           <div class='col col-20 ' ui-sref='tab.industryUser'>
             <span class='icon_box icon_bg'>
-              <img src="img/help-idea.png" alt="">
+              <img src="img/icon_Tools.png" alt="">
             </span>
             <h4>辅助工具</h4>
           </div>
           <div class='col col-20 ' ui-sref='tab.recruitment'>
             <span class='icon_box icon_bg'>
-              <img src="img/company-product.png" alt="">
+              <img src="img/icon_Sales.png" alt="">
             </span>
             <h4>销售培训</h4>
           </div>
           <div class='col col-20 ' nav-transition="ios" nav-direction="enter" ui-sref='tab.qiyechaxun'>
             <span class='icon_box icon_bg'>
-              <img src="img/company-query.png" alt="">
+              <img src="img/icon_Customer.png" alt="">
             </span>
             <h4>客户查询</h4>
           </div>
         </div>
-        <div class="row border-top-1 item-padding-10 position-par">
-          <span class="col col-25 text-right pa-right-10" ui-sref='tab.condition({id:"ss"})'>卡得商务</span>
-          <i class="border-right-1"></i>
-          <span class="col pa-left-10">打造以名片为基础的商务社交平台</span>
+        <div class="advertis">
+          <img src="../../img/icon_reports.png" alt="" class="ad-img">
+          <ul class="ad-article">
+            <li>卡得集团荣获2019年百佳</li>
+            <li>卡的集团与阿里巴巴合作开发人工智能电动车</li>
+          </ul>
         </div>
       </div>
     </div>
 
     <ul class="row third-bar text-center my-order">
-      <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='shangye'}" ng-click="vm.changeTag('shangye')"
-        class="col">最新商业动态 </li>
-      <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='mingpian'}" ng-click="vm.changeTag('mingpian')"
-        class="col">推荐商业动态 </li>
-      <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='mingpian'}" ng-click="vm.changeTag('mingpian')"
-          class="col">热门商业动态 </li>
+      <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='new'}" ng-click="vm.changeTag('new')"
+        class="col">商业快讯 </li>
+      <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='recommend'}" ng-click="vm.changeTag('recommend')"
+        class="col">创业创新 </li>
+      <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='hot'}" ng-click="vm.changeTag('hot')"
+          class="col">行业报告 </li>
     </ul>
-
-    <div class="list card">
-      <div>
-        <div class="item item-image" ui-sref="tab.dt_detail({id:'734674623746'})">
-          <img src="img/adam.jpg">
-          <a class="item item-icon-right" href="javascript:;">
-            <i class="icon  ion-ios-arrow-forward"></i>
-            资本寒冬
-          </a>
-        </div>
-        <p class="pull-right assist_opt">
-          <a class="subdued">1 点赞</a>
-          <a class="subdued">5 评论</a>
-        </p>
-      </div>
-      <div>
-        <div class="item item-image" ui-sref="tab.dt_detail({id:'734674623746'})">
-          <img src="img/adam.jpg">
-          <a class="item item-icon-right" href="javascript:;">
-            <i class="icon  ion-ios-arrow-forward"></i>
-            资本寒冬
-          </a>
-        </div>
-        <p class="pull-right assist_opt">
-          <a class="subdued">1 点赞</a>
-          <a class="subdued">5 评论</a>
-        </p>
-
-      </div>
-    </div>
-
+    <div class="list">
+    <a class="item item-thumbnail-right item-card" href="javascipt:;" ng-repeat="item in [1,2,3]">
+      <img src="../../img/company-four.png">
+      <h2 class="article-title">港媒：盲目排挤华为西方公司陷入了窘境</h2>
+      <p class="article-type"><span>科技</span><span>体育</span></p>
+      <p class="article-view-count">
+        <span>23分钟前</span>
+        <span class="icon"><img src="../../img/icon_Watch.png" alt="">100</span>
+        <span class="icon"><img src="../../img/icon_Praise.png" alt="">500</span>
+      </p>
+    </a>
+</div>
   </ion-content>
 </ion-view>
