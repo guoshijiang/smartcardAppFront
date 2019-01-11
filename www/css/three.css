@@ -28,3 +28,43 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.advertis{
+  display: flex;
+  height: 50px;
+}
+.advertis .ad-img,.ad-article{
+  height: 100%;
+}
+.ad-article li {
+  list-style: circle;
+  list-style-position: inside;
+  line-height: 25px;
+  height: 25px;
+
+}
+.third-bar{
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  color: #D4D9F4;
+}
+.item-thumbnail-right,.item-card {
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.article-type span{
+  border: 1px solid #7F95FF;
+}
+.article-type span:not(:first-child){
+  margin-left: 8px;
+}
+.article-view-count{
+  display: flex;
+  justify-content: space-between;
+}
+.article-view-count span{
+  display: flex;
+  align-items: center;
+}

@@ -3,46 +3,33 @@ angular
   /**
    *首页控制器
    */
-  .controller('FirstCtrl', function($scope, $timeout, ionicToast,FirstServe) {
-    var vm = ($scope.vm = this);
-    console.log(localStorage.getItem("userUuid"));
-    $scope.slidebox=[]
-    FirstServe.findbyquery({
-    	userUuid:localStorage.getItem("userUuid"),
-			status:1
-    }).then(res => {
-
-    	if(res.code == 200 && res.success) {
-    		const result = res.result
-    		$scope.slidebox=res.result.list.map(function(item){
-    			return{
-    				list:item,
-    				active:false
-    			}
-    		})
-    	}
-    })
-    $scope.flipBook=function(item,index) {
-    	if(index == 0){
-    		return
-    	}
-    	$scope.slidebox[index].active = true
-    }
-    $scope.listModal = false;
-    $scope.toggleDropDown = function() {
-    	if($scope.listModal) {
-    		$scope.listModal = false;
-    	}else {
-    		$scope.listModal = true;
-    	}
-    }
-    $scope.gocardModel = function() {
-      $scope.listModal = false;
-    }
-    $scope.gocompanyCard = function() {
-      $scope.listModal = false;
-    }
+  .controller('FirstCtrl', function($scope, $timeout, ionicToast,FirstServe,$state) {
+      $scope.turnList=[]
+      $scope.contentList=[]
+      $scope.prePage = function() {
+        alert('上一页')
+      };
+      $scope.nextPage = function(index) {
+        if(index==1) {
+          $scope.turnFlag = true
+          var obj2 = $scope.turnList.shift()
+          $scope.contentList.push(obj2)
+          var obj1 = $scope.contentList.shift()
+          $scope.turnList.push(obj1)
+        }else {
+          $scope.turnFlag = false
+        }
+        
+      };
+      $scope.$on('$ionicView.beforeEnter', function() {
+            FirstServe.findbyquery({status:1}).then(res=>{
+                if(res.code == 200) {
+                    $scope.turnList = res.result.list
+                }
+            })
+      });
   })
+      
 /*
   .controller('TabCtrl', function($scope, $timeout) {
     console.log('开始')
