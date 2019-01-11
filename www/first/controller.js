@@ -21,13 +21,11 @@ angular
         }
         
       };
-      $scope.$on('$ionicView.beforeEnter', function() {
-            FirstServe.findbyquery({status:1}).then(res=>{
+      FirstServe.findbyquery({status:1}).then(res=>{
                 if(res.code == 200) {
                     $scope.turnList = res.result.list
                 }
             })
-      });
   })
       
 /*
