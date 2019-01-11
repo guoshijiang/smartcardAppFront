@@ -2,9 +2,15 @@
 	display:flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	width: 100%;
-	height: 180px;
+	height: 200px;
 	border-bottom:1px solid #ccc;
+}
+.img-box span{
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
 }
 .item-img {
 	height: 120px;
@@ -36,6 +42,9 @@
 	transform-style: preserve-3d;
 	perspective: 3000px
 }
+.list-card{
+	transform: translate(100%,-50px) scale(.6) translateZ(-200px);
+}
 .list-card:nth-child(1){
 	transform: translate(-70%,-50px) scale(.6) translateZ(-200px);
 
@@ -50,9 +59,15 @@
 }
 .animation1{
 	animation: pageTwo 1s 1;
+	animation-fill-mode: forwards;
 }
 .animation2{
 	animation: pageThree 1s 1;
+	animation-fill-mode: forwards;
+}
+.animation3{
+	animation: pageFour 1s 1;
+	animation-fill-mode: forwards;
 }
 @keyframes pageTwo{
 		from{
@@ -68,6 +83,14 @@
 		}
 		to{
 			transform:translateY(-70px) scale(.7) translateZ(0px);
+		}
+	}
+@keyframes pageFour{
+		from{
+			transform: translate(70%,-50px) scale(.6) translateZ(-200px);
+		}
+		to{
+			transform: translate(70%,-50px) scale(.6) translateZ(-200px);
 		}
 	}
 .menu-card{

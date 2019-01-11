@@ -17,18 +17,20 @@
 
 	<ion-content class="bg-gray xn-content">
 		<div class="book preserve-3d">
-			<div class="list card list-card" ng-repeat="item in turnList" ng-class="{'animation1':$index==1&&turnFlag,'animation2':$index==2&&turnFlag}">
+			<div class="list card list-card" ng-repeat="item in turnList" ng-class="{'animation1':turnFlag&&$index==turnFlag-1,'animation2':turnFlag&&$index==turnFlag,'animation3':turnFlag&&$index==turnFlag+1}">
 			  <div class="item item-body">
 			  	<div class="img-box">
 			    	<img class="item-img" src="../../img/QRcode.png" alt="">
+			    	<span style="font-weight: 600; color: blue">{{item.userCname}}</span>
+			    	<span>{{item.companyCname}}</span>
 			  	</div>
 			    <div class="list-footer">
 			    	<div class="item">{{item.name}}</div>
-			    	<div class="item">手机</div>
+			    	<div class="item">手机：{{item.phone}}</div>
 			    	<div class="item">座机</div>
 			    	<div class="item">QQ</div>
 			    	<div class="item">微信</div>
-			    	<div class="item">邮箱</div>
+			    	<div class="item">邮箱：{{item.email}}</div>
 			    </div>
 			    <div class="opt-group">
 			    	<button class="button btn-left" ng-click="prePage()"></button>

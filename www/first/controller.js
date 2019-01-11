@@ -4,24 +4,32 @@ angular
    *首页控制器
    */
   .controller('FirstCtrl', function($scope, $timeout, ionicToast,FirstServe,$state) {
-      $scope.turnList=[{name:'内容1'},{name:'内容2'},{name:'内容3'}]
-      $scope.contentList=[{name:'内容4'}]
+      $scope.turnList=[]
+      $scope.contentList=[]
       $scope.prePage = function() {
         alert('上一页')
       };
       $scope.nextPage = function(index) {
         if(index==1) {
           $scope.turnFlag = true
-          var obj1 = $scope.contentList.shift()
           var obj2 = $scope.turnList.shift()
-          $scope.turnList.push(obj1)
           $scope.contentList.push(obj2)
+          var obj1 = $scope.contentList.shift()
+          $scope.turnList.push(obj1)
         }else {
           $scope.turnFlag = false
         }
         
       };
+      $scope.$on('$ionicView.beforeEnter', function() {
+            FirstServe.findbyquery({status:1}).then(res=>{
+                if(res.code == 200) {
+                    $scope.turnList = res.result.list
+                }
+            })
+      });
   })
+      
 /*
   .controller('TabCtrl', function($scope, $timeout) {
     console.log('开始')
