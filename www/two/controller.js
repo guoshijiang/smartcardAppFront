@@ -39,7 +39,7 @@ angular
             }
             vm.findMkeepByUserid()
             $timeout(function() {
-                $scope.$broadcast('scroll.refreshComplete')
+                $scope.$broadcast('scroll.refreshComplete');
             }, 300);
         };
 

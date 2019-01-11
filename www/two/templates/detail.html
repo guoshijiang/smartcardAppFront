@@ -2,55 +2,78 @@
 	<ion-nav-title>
 		<div class="bar bar-positive">
 			<div class="button-bar nav-bar">
-				<a class="button" nav-transition="ios" nav-direction="enter">{{vm.query.mkeepName}}</a>
+				<a class="button" nav-transition="ios" nav-direction="enter">人脉详情</a>
 			</div>
 		</div>
 	</ion-nav-title>
-
 	<ion-content>
 		<ion-card>
+			<div class="mkeep-detail">
+				<div class="mankeep">
+					<div class="mankeep-pho">
+						<div class = "mankeep-pho-img">
+							<img class="pho-img" ng-src="../img/ben.png">
+						</div>
+					</div>
+					<div class="mankeep-info">
+						<div class="mankeep-info-pname">
+							<div class="info-name">
+								<p>{{vm.query.mkeepName}}</p>
+							</div>
+							<div class="info-position">
+								<p>{{vm.query.mkeepBusiness}}</p>
+							</div>
+						</div>
+						<div class="mankeep-company">
+							<p>{{item.mkeepCompany}}</p>
+						</div>
+						<div class="mankeep-address">
+							<p >{{vm.query.mkeepAddress}}</p>
+						</div>
+						<div class="mankeep-tag">
+							<p>{{vm.query.mkeepTag}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
-			<ion-item>
-				<div class="card-wrap">
-					<ion-avatar item-start>
-						<img class="ion_avatar" src="../img/ben.png" />
-					</ion-avatar>
-					<h3 class="ion_name">{{vm.query.mkeepName}} {{vm.query.mkeepBusiness}}</h3>
+			<div class="mkeep-information-space"></div>
+			<div class="mkeep-information">
+
+				<div class="mankeep-information-item-img">
+					<div class="mkeep-item-img">
+						<div class="item-mkeep-img-space"></div>
+						<div class="item-mkeep-img"><img style="width:85px; height:85px" src="../img/ben.png"/></div>
+						<div class="item-mkeep-img-space"></div>
+					</div>
+					<div><p>{{vm.query.mkeepName}}</p></div>
+					<div><p>{{vm.query.mkeepAddress}}</p></div>
 				</div>
-				<h3 class="ion_address">地址: {{vm.query.mkeepAddress}}</h3>
-				<h3 class="ion_skill">个人业务: {{vm.query.mkeepTag}}</h3>
-			</ion-item>
-			<div style="font-size:15px; margin-left:15px; color:#06b1a4 ">
-				<div class="gap-20" style="font-size: 16px; font-weight:bold; color: black">
-					人脉联系方式
-				</div>
-				<div class="gap-5">
+
+				<div class="mankeep-information-item">
 					手机号码: {{vm.query.mkeepPhone}}
 				</div>
-				<div class="gap-5">
+				<div class="mankeep-information-item">
 					电话号码: {{vm.query.mkeepTelphone}}
 				</div>
-				<div class="gap-5">
+
+				<div class="mankeep-information-item">
 					微信: {{vm.query.mkeepWeichat}}
 				</div>
-				<div class="gap-5">
+
+				<div class="mankeep-information-item">
 					QQ: {{vm.query.mkeepQq}}
 				</div>
-				<div class="gap-5">
+
+				<div class="mankeep-information-item">
 					邮箱: {{vm.query.mkeepMail}}
 				</div>
-				<div class="gap-30" style="font-size: 16px; font-weight:bold; color: black">
-					人脉其他信息
-				</div>
-				<div class="gap-5">
+
+				<div class="mankeep-information-item">
 					添加时间: {{vm.query.createTime}}
 				</div>
 			</div>
+			<div class="mkeep-information-space"></div>
 		</ion-card>
-
-		<div class="gap-50" style="text-align: center">
-			<button style="width:65%; height:38px; border: solid 1px #f2f2f2; background-color:white; font-size:18px; color:#0c60ee " >立即沟通</button>
-		</div>
 	</ion-content>
-	<template id=""></template>
 </ion-view>
