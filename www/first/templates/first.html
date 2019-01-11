@@ -21,6 +21,7 @@
 			  <div class="item item-body">
 			  	<div class="img-box">
 			    	<img class="item-img" src="../../img/QRcode.png" alt="">
+			    	<!-- <qrcode data="http://www.baidu.com" download></qrcode> -->
 			    	<span style="font-weight: 600; color: blue">{{item.userCname}}</span>
 			    	<span>{{item.companyCname}}</span>
 			  	</div>
@@ -38,11 +39,12 @@
 			    </div>
 			  </div>
 			</div>
+			<div class="menu-card">
+				<div class="item" ui-sref='tab.addCard'>手动添加名片</div>
+				<div class="item">扫描纸质名片</div>
+			</div>
 		</div>
-		<div class="menu-card">
-			<div class="item" ui-sref='tab.addCard'>手动添加名片</div>
-			<div class="item">扫描纸质名片</div>
-		</div>
+		
 	</ion-content>
 
 </ion-view>
