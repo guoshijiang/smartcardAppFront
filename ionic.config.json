@@ -1,6 +1,5 @@
 {
   "name": "demo",
-  "app_id": "",
   "integrations": {
     "gulp": {},
     "cordova": {}
