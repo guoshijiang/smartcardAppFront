@@ -6,74 +6,43 @@
 			</div>
 		</div>
 	</ion-nav-title>
-	<ion-content>
-		<ion-card>
-			<div class="mkeep-detail">
-				<div class="mankeep">
-					<div class="mankeep-pho">
-						<div class = "mankeep-pho-img">
-							<img class="pho-img" ng-src="../img/ben.png">
-						</div>
+	<ion-content class="bg-gray xn-content">
+		<div class="mkeep-detail">
+			<div class="mankeep">
+				<div class="mankeep-pho">
+					<div class = "mankeep-pho-img">
+						<img class="pho-img" ng-src="../img/ben.png">
 					</div>
-					<div class="mankeep-info">
-						<div class="mankeep-info-pname">
-							<div class="info-name">
-								<p>{{vm.query.mkeepName}}</p>
-							</div>
-							<div class="info-position">
-								<p>{{vm.query.mkeepBusiness}}</p>
-							</div>
-						</div>
-						<div class="mankeep-company">
-							<p>{{item.mkeepCompany}}</p>
-						</div>
-						<div class="mankeep-address">
-							<p >{{vm.query.mkeepAddress}}</p>
-						</div>
-						<div class="mankeep-tag">
-							<p>{{vm.query.mkeepTag}}</p>
-						</div>
+				</div>
+				<div class="mankeep-info">
+					<div class="mankeep-info-pname">
+						<div class="info-name"><p>{{vm.query.mkeepName}}</p></div>
+						<div class="info-position"><p>{{vm.query.mkeepBusiness}}</p></div>
 					</div>
+					<div class="mankeep-company"><p>天津木姜子科技有限公司</p></div>
+					<div class="mankeep-address"><p>{{vm.query.mkeepAddress}}</p></div>
+					<div class="mankeep-tag"><p>{{vm.query.mkeepTag}}</p></div>
 				</div>
 			</div>
+		</div>
 
-			<div class="mkeep-information-space"></div>
-			<div class="mkeep-information">
-
-				<div class="mankeep-information-item-img">
-					<div class="mkeep-item-img">
-						<div class="item-mkeep-img-space"></div>
-						<div class="item-mkeep-img"><img style="width:85px; height:85px" src="../img/ben.png"/></div>
-						<div class="item-mkeep-img-space"></div>
-					</div>
-					<div><p>{{vm.query.mkeepName}}</p></div>
-					<div><p>{{vm.query.mkeepAddress}}</p></div>
-				</div>
-
-				<div class="mankeep-information-item">
-					手机号码: {{vm.query.mkeepPhone}}
-				</div>
-				<div class="mankeep-information-item">
-					电话号码: {{vm.query.mkeepTelphone}}
-				</div>
-
-				<div class="mankeep-information-item">
-					微信: {{vm.query.mkeepWeichat}}
-				</div>
-
-				<div class="mankeep-information-item">
-					QQ: {{vm.query.mkeepQq}}
-				</div>
-
-				<div class="mankeep-information-item">
-					邮箱: {{vm.query.mkeepMail}}
-				</div>
-
-				<div class="mankeep-information-item">
-					添加时间: {{vm.query.createTime}}
-				</div>
+		<div class="bottom-boxs-space"></div>
+		<div class="item item-body bottom-boxs">
+			<div class="img-box">
+				<img class="item-img" src="../../img/QRcode.png" alt="">
+				<span style="font-weight:600;">{{vm.query.mkeepName}}</span>
+				<span>{{vm.query.mkeepAddress}}</span>
 			</div>
-			<div class="mkeep-information-space"></div>
-		</ion-card>
+			<div class="list-footer">
+				<div class="item">手机号码: {{vm.query.mkeepPhone}}</div>
+				<div class="item">电话号码: {{vm.query.mkeepTelphone}}</div>
+				<div class="item">微信: {{vm.query.mkeepWeichat}}</div>
+				<div class="item">QQ: {{vm.query.mkeepQq}}</div>
+				<div class="item">邮箱: {{vm.query.mkeepMail}}</div>
+				<div class="item">添加时间: {{vm.query.createTime}}</div>
+			</div>
+		</div>
+		<div class="bottom-boxs-space"></div>
+		<div class="weichat-button"></div>
 	</ion-content>
 </ion-view>
