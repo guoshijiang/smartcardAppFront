@@ -4,8 +4,10 @@
 }
 
 .mkeep-detail{
-  margin-top:20px;
-  margin-left:16px;
+  border-bottom:1px solid #ccc;
+  background-color:#ffffff;
+  padding-top:25px;
+  padding-left:16px;
   color:#00c3b2;
 }
 
@@ -29,6 +31,15 @@
   align-items:center;
   justify-content:center;
   overflow:hidden;
+}
+.mankeep-item-box {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height:40vh;
+    border-bottom:1px solid #ccc;
 }
 
 .mankeep-info-pname {
@@ -81,49 +92,27 @@
   font-size:16px;
 }
 
-.mkeep-information-space {
-  width:20%;
-  height:100%;
-  float:left;
-  display:inline-block;
-}
-
 .mkeep-information {
-  width:60%;
-  height:100%;
-  background-color:white;
-  float:left;
-  display:inline-block;
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background-color:#ffffff;
 }
 
 .mankeep-information-item-img {
-  text-align:center;
-  margin-bottom:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    width:100%;
 }
-
 
 .mkeep-item-img {
     width:100%;
     height:85px;
     text-align:center;
-}
-
-.item-mkeep-img-space {
-    width:33%;
-    height:100%;
-    float:left;
-    display:inline-block;
-}
-
-.item-mkeep-img {
-    width:34%;
-    height:100%;
-    float:left;
-    display:inline-block;
-}
-
-.mankeep-information-item {
-  margin-top:15px;
 }
 
 .item-mkeep {
@@ -202,6 +191,25 @@
   font-size: 16px;
 }
 
+.bottom-boxs {
+    margin-top:30px;
+    width:80%;
+    height:600px;
+    float: left;
+    display:inline-block;
+}
+
+.bottom-boxs-space {
+    margin-top:30px;
+    width:10%;
+    height:600px;
+    float:left;
+    display:inline-block;
+}
+
+.chat-button {
+    margin-top:30px;
+}
 
 
 

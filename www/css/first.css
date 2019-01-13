@@ -4,7 +4,7 @@
 	align-items: center;
 	flex-direction: column;
 	width: 100%;
-	height: 200px;
+	height: 40vh;
 	border-bottom:1px solid #ccc;
 }
 .img-box span{
@@ -12,8 +12,9 @@
 	line-height: 25px;
 	font-size: 16px;
 }
+
 .item-img {
-	height: 120px;
+	height:120px;
 	width:120px;
 }
 .list-footer .item{
@@ -37,6 +38,7 @@
 .list-card{
 	position: absolute;
 	width:100%;
+	height:100vh;
 }
 .preserve-3d{
 	transform-style: preserve-3d;
