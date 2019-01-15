@@ -15,6 +15,7 @@ angular
             return
           }
           $scope.pre = true
+          $scope.next = false
           $scope.turnFlag1 = index
       };
       $scope.nextPage = function(index) {
@@ -25,6 +26,7 @@ angular
             return
           }
           $scope.pre = false
+          $scope.next = true
           $scope.turnFlag = index
       };
       FirstServe.findbyquery({status:1}).then(res=>{
