@@ -591,7 +591,7 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
   border-radius: 50%;
   top: -37px;
   left: 155px;
-  position: fixed;
+  position: absolute;
   font-family: "";
   background: url('../img/icon/up_normal.png') center center no-repeat;
   background-size: cover;
@@ -600,7 +600,7 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
   content: ' ';
   width: 65px;
   height: 65px;
-  position: fixed;
+  position: absolute;
   border-radius: 50%;
   top: -37px;
   left: 155px;

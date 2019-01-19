@@ -1,44 +1,44 @@
-.ion-card-model:before {
+.ion-card-model::before {
   content: url("../img/card-model.svg");
 }
 
-.ion-card-personal:before {
+.ion-card-personal::before {
   content: url("../img/card-personal.svg");
 }
 
-.ion-card-compnay:before {
+.ion-card-compnay::before {
   content: url("../img/icon_Enterprise.png");
 }
 
-.ion-like:before {
+.ion-like::before {
   content: url("../img/icon_Elected.png");
 }
 
-.ion-setup:before {
-  content: url("../img/icon_setup.png");
+.ion-setup::before {
+  content: url("../img/icon_setup.png") !important;
 }
 
-.ion-help-and-feedback:before{
+.ion-help-and-feedback::before{
   content: url("../img/icon_help.png");
 }
 
-.ion-feedback:before {
-  content: url("../img/icon_feedback.png");
+.ion-feedback::before {
+  content: url("../img/icon_feedback.png") !important;
 }
 
-.ion-interpersonal-connections:before {
+.ion-interpersonal-connections::before {
   content: url("../img/renmai-search.svg");
 }
 
-.ion-recently-search:before {
+.ion-recently-search::before {
   content: url("../img/recently-search.svg");
 }
 
-.ion-search-recommend:before {
+.ion-search-recommend::before {
   content: url("../img/search-recommend.svg");
 }
 
-.ion-company-query:before {
-  content: url("../img/icon_Customer.png");
+.ion-company-query::before {
+  content: url("../img/icon_txt.png");
 }
 
