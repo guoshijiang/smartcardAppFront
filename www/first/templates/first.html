@@ -8,7 +8,7 @@
             <input type="search" placeholder="搜索名片">
           </label>
           <button class="button button-clear button-large"
-          style="background: url(../../img/icon_Scanning.png) no-repeat center;width: 40px;height: 40px;background-size: 30px"></button>
+          style="background: url(img/icon_Scanning.png) no-repeat center;width: 40px;height: 40px;background-size: 30px"></button>
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
 			<div class="list card list-card" ng-repeat="item in turnList" ng-class="{'mid':mid==$index,'left':$index < mid,'right':$index > mid,'animation1':next&&$index==turnFlag,'animation2':next&&$index==turnFlag+1,'animation3':next&&$index==turnFlag+2,'animation1-back':pre&&$index==turnFlag1-1,'animation2-back':pre&&$index==turnFlag1,'animation3-back':pre&&$index==turnFlag1+1}">
 			  <div class="item item-body self-item-body">
 			  	<div class="img-box">
-			    	<img class="item-img" src="../../img/QRcode.png" alt="">
+			    	<img class="item-img" src="img/QRcode.png" alt="">
 			    	<span style="font-weight: 600; color: blue">{{item.userCname}}</span>
 			    	<span>{{item.companyCname}}</span>
 			  	</div>
