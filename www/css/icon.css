@@ -7,23 +7,23 @@
 }
 
 .ion-card-compnay:before {
-  content: url("../img/card-company.svg");
+  content: url("../img/icon_Enterprise.png");
 }
 
 .ion-like:before {
-  content: url("../img/icon-good.svg");
+  content: url("../img/icon_Elected.png");
 }
 
 .ion-setup:before {
-  content: url("../img/setup.svg");
+  content: url("../img/icon_setup.png");
 }
 
 .ion-help-and-feedback:before{
-  content: url("../img/help.svg");
+  content: url("../img/icon_help.png");
 }
 
 .ion-feedback:before {
-  content: url("../img/feedback.svg");
+  content: url("../img/icon_feedback.png");
 }
 
 .ion-interpersonal-connections:before {
@@ -39,6 +39,6 @@
 }
 
 .ion-company-query:before {
-  content: url("../img/company-query.svg");
+  content: url("../img/icon_Customer.png");
 }
 

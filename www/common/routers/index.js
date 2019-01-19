@@ -250,7 +250,19 @@ angular.module('smartcard.router', ['ui.router']).config([
                     controller: 'AboatCtrl'
                 }
             }
-        })
+		})
+		/**
+		 * 上传文件
+		 * */ 
+		.state('tab.upFile', {
+			url: '/upFile',
+			views: {
+			  'tab-up': {
+				templateUrl: 'templates/upFile.html',
+				controller: 'upFileCtrl'
+			  }
+			}
+		  })
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/loginPwd');

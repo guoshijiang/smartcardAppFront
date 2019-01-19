@@ -30,10 +30,10 @@ angular
   .controller('customerInfoCtrl', function($scope) {
     console.log('导入客户资料')
   })
-  // .controller('DtDetailCtrl', function($scope) {
-  //   console.log('详细资料')
-  // })
+
   .controller('queryInfoCtrl', function($scope) {
     console.log('查询资料');
   })
-
+  .controller('upFileCtrl', function($scope) {
+    console.log('上传附件')
+  })

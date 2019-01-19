@@ -143,13 +143,14 @@ angular
     }
   })
 
-      .controller('TabCtrl', function($scope, FirstServe) {
+  .controller('TabCtrl', function($scope, FirstServe) {
       //console.log("进来了",FirstServe);
       var vm = ($scope.vm = this)
       vm.query = {
           userUuid: '1e8adc5e-eb9e-4d63-8ffa-408e88ce92a7',
           status:1,
       }
+      vm.tabs = [{active:false},{active:false},{active:false}]
       console.log()
       vm.selectTag = function(num) {
           vm.query.tag = num

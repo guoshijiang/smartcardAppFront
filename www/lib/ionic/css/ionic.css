@@ -1290,7 +1290,6 @@
 
 .ion-camera:before {
   content: "";
-  font-size: 45px;
 }
 .ion-card:before {
   content: ""; }
@@ -1672,7 +1671,7 @@
 
 .ion-ios-camera-outline:before {
   content: ""; 
-font-size:45px;}
+}
 
 .ion-ios-cart:before {
   content: ""; }
@@ -2140,7 +2139,7 @@ font-size:45px;}
   content: ""; }
 
 .ion-ios-pulse:before {
-  content: ""; }
+  content: " "; }
 
 .ion-ios-pulse-strong:before {
   content: ""; }

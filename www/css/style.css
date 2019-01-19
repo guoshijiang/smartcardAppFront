@@ -510,3 +510,101 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 .tabs-top > .tabs {
   top: 0px;
 }
+
+/* 底部tab */
+
+.tab-item .ion-ios-pulse::before{
+  content: ' ';
+  width: 30px;
+  height: 30px;
+  font-family: "";
+  background: url('../img/icon/card_normal.png') center center no-repeat;
+  background-size: cover;
+}
+.tab-item .ion-ios-pulse-strong::before{
+  content: ' ';
+  width: 30px;
+  height: 30px;
+  font-family: "";
+  background: url('../img/icon/card_selected.png') center center no-repeat;
+  background-size: cover;
+}
+/* 人脉 */
+.tab-item .ion-ios-rewind::before{
+  content: ' ';
+  width: 30px;
+  height: 30px;
+  font-family: "";
+  background: url('../img/icon/people_normal.png') center center no-repeat;
+  background-size: cover;
+}
+.tab-item .ion-ios-rewind-outline::before{
+  content: ' ';
+  width: 30px;
+  height: 30px;
+  font-family: "";
+  background: url('../img/icon/people_selected.png') center center no-repeat;
+  background-size: cover;
+}
+/* 学院 ion-document */
+.tab-item .ion-document::before{
+  content: ' ';
+  width: 30px;
+  height: 30px;
+  font-family: "";
+  background: url('../img/icon/College_normal.png') center center no-repeat;
+  background-size: cover;
+}
+.tab-item .ion-document-text::before{
+  content: ' ';
+  width: 30px;
+  height: 30px;
+  font-family: "";
+  background: url('../img/icon/College_selected.png') center center no-repeat;
+  background-size: cover;
+}
+/* 我的 */
+.tab-item .ion-ios-shuffle::before{
+  content: ' ';
+  width: 30px;
+  height: 30px;
+  font-family: "";
+  background: url('../img/icon/my_normal.png') center center no-repeat;
+  background-size: cover;
+}
+.tab-item .ion-ios-shuffle-strong::before{
+  content: ' ';
+  width: 30px;
+  height: 30px;
+  font-family: "";
+  background: url('../img/icon/my_selected.png') center center no-repeat;
+  background-size: cover;
+}
+/* 上传文件 on-camera:before */
+.tab-item .ion-ios-camera-outline,.tab-item .ion-camera{
+  /* position: relative; */
+}
+.tab-item .ion-ios-camera-outline::before{
+  content: ' ';
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  top: -37px;
+  left: 155px;
+  position: fixed;
+  font-family: "";
+  background: url('../img/icon/up_normal.png') center center no-repeat;
+  background-size: cover;
+}
+.tab-item .ion-camera::before{
+  content: ' ';
+  width: 65px;
+  height: 65px;
+  position: fixed;
+  border-radius: 50%;
+  top: -37px;
+  left: 155px;
+  font-family: "";
+  background: url('../img/icon/up_selected.png') center center no-repeat;
+  background-size: cover;
+}
