@@ -253,6 +253,6 @@ angular.module('smartcard.router', ['ui.router']).config([
         })
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/loginPhone');
+    $urlRouterProvider.otherwise('/loginPwd');
   }
 ])

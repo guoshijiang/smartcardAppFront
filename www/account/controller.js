@@ -81,11 +81,10 @@ angular
     .controller('RegisterPhoneCtrl', function($scope, $timeout, $state, ionicToast, AccountServe) {
         var vm = ($scope.vm = this);
         vm.register = {
-            username:'',
-            password:'',
-            confirmPwd:'',
             phone:'',
             verifyCode:'',
+            password:'',
+            confirmPwd:'',
         };
 
         vm.getCode = function() {
@@ -147,9 +146,9 @@ angular
                 return ;
             }
             AccountServe.registerInfoToCard(
-                {username:localStorage.getItem("username"), password:localStorage.getItem("password"),
-                    phone:localStorage.getItem("phone"), weichat:'',
-                    email:'', qq:'', imgurl:'def.png'
+                {username:vm.registerCtrl.realName, password:localStorage.getItem("password"),
+                    phone:localStorage.getItem("phone"), weichat:'1',
+                    email:'1', qq:'1', imgurl:'def.png'
                 }).then(
                 function(res) {
                     if (res.code === 400) {
@@ -184,7 +183,7 @@ angular
                         }
                         AccountServe.addCardMessage(param).then(
                             function(res) {
-                                console.log("添加名片信息 = " + JSON.stringify(res))
+                                console.log("添加名片信息 = "+ JSON.stringify(res))
                                 if (res.code === 400) {
                                     ionicToast.show('参数为空，请重新输入', 'middle', false, 1500);
                                     return ;

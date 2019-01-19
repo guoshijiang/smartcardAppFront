@@ -2,7 +2,6 @@
     padding:0px;
     margin:0px;
     text-align:center;
-    background-color: #354bb2;
 }
 
 .login-banner-img{
@@ -28,7 +27,6 @@
 
 .inputLogin{
     margin-left:20px;
-    margin-top:10px;
     text-align:center;
 }
 
@@ -51,7 +49,7 @@
 
 .login-input-img {
     width:12%;
-    margin-top:30px;
+    margin-top:25px;
     float:left;
     display:inline;
 }
@@ -68,6 +66,13 @@
     height:32px;
 }
 
+.login-input-img-code {
+    float:left;
+    width: 26px;
+    height:54px;
+    padding-bottom:8px;
+}
+
 .forget-password{
     margin-top:18px;
     float:left;
@@ -75,6 +80,17 @@
     width:100%;
     height:21px;
     margin-bottom:36px;
+}
+
+.forget-password-left {
+    float:left;
+    display:inline-block;
+}
+
+.forget-password-right {
+    float:left;
+    display:inline-block;
+    margin-left:38px;
 }
 
 .forget-password a {

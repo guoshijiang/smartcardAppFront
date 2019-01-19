@@ -1,5 +1,4 @@
 <ion-view>
-
 	<ion-nav-title>
     <div class="bar bar-positive">
       <div class="button-bar nav-bar">
@@ -8,30 +7,29 @@
             <i class="icon ion-ios-search placeholder-icon"></i>
             <input type="search" placeholder="搜索名片">
           </label>
-          <button class="button button-clear button-large" 
+          <button class="button button-clear button-large"
           style="background: url(../../img/icon_Scanning.png) no-repeat center;width: 40px;height: 40px;background-size: 30px"></button>
         </div>
       </div>
     </div>
   </ion-nav-title>
-
 	<ion-content class="bg-gray xn-content">
 		<div class="book preserve-3d">
 			<div class="list card list-card" ng-repeat="item in turnList" ng-class="{'mid':mid==$index,'left':$index < mid,'right':$index > mid,'animation1':next&&$index==turnFlag,'animation2':next&&$index==turnFlag+1,'animation3':next&&$index==turnFlag+2,'animation1-back':pre&&$index==turnFlag1-1,'animation2-back':pre&&$index==turnFlag1,'animation3-back':pre&&$index==turnFlag1+1}">
 			  <div class="item item-body self-item-body">
 			  	<div class="img-box">
 			    	<img class="item-img" src="../../img/QRcode.png" alt="">
-			    	<!-- <qrcode data="http://www.baidu.com" download></qrcode> -->
 			    	<span style="font-weight: 600; color: blue">{{item.userCname}}</span>
 			    	<span>{{item.companyCname}}</span>
 			  	</div>
 			    <div class="list-footer">
 			    	<div class="item">{{item.name}}</div>
-			    	<div class="item">手机：{{item.phone}}</div>
-			    	<div class="item">座机</div>
-			    	<div class="item">QQ</div>
-			    	<div class="item">微信</div>
-			    	<div class="item">邮箱：{{item.email}}</div>
+					<div class="item">职务: {{item.position}}</div>
+					<div class="item">名片标签: {{item.cardMark}}</div>
+					<div class="item">手机: {{item.phone}}</div>
+			    	<div class="item">座机: {{item.telphone}}</div>
+					<div class="item">公司业务: {{item.business}}</div>
+					<div class="item">地址: {{item.companyCaddress}}</div>
 			    </div>
 			    <div class="opt-group">
 			    	<button class="button btn-left" ng-click="prePage($index)"></button>
@@ -44,8 +42,6 @@
 				<div class="item">扫描纸质名片</div>
 			</div>
 		</div>
-		
 	</ion-content>
-
 </ion-view>
 
