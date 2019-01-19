@@ -31,7 +31,7 @@ angular
                 ionicToast.show('手机号码或者验证码为空', 'middle', false, 1500);
                 return ;
             }
-            AccountServe.loginByPhoneCode({ phone: vm.loginP.phone, password:vm.loginP.verifycode}).then(
+            AccountServe.loginByPhoneCode({ phone:vm.loginP.phone, code:vm.loginP.verifycode}).then(
                 function(res) {
                     if(res.code === 400 ) {
                         ionicToast.show('手机号码或者验证码为空', 'middle', false, 1500);
@@ -116,15 +116,15 @@ angular
                     ionicToast.show('两次输入的密码不一样，请检查', 'middle', false, 1500);
                     return ;
                 } else {
-                    if(vm.register.verifyCode === localStorage.getItem("vcode")){
+                    //if(vm.register.verifyCode === localStorage.getItem("vcode")){
                         localStorage.setItem("password", vm.register.password);
                         localStorage.setItem("phone", vm.register.phone);
                         localStorage.setItem("verifyCode", vm.register.verifyCode);
                         $state.go('registerCard');
-                    } else {
-                        ionicToast.show('您输入的验证码有误', 'middle', false, 1500);
-                        return ;
-                    }
+                   // } else {
+                       // ionicToast.show('您输入的验证码有误', 'middle', false, 1500);
+                      //  return ;
+                   // }
                 }
             }
         };
@@ -146,10 +146,9 @@ angular
                 return ;
             }
             AccountServe.registerInfoToCard(
-                {username:vm.registerCtrl.realName, password:localStorage.getItem("password"),
+                {code:localStorage.getItem("verifyCode"), username:vm.registerCtrl.realName, password:localStorage.getItem("password"),
                     phone:localStorage.getItem("phone"), weichat:'1',
-                    email:'1', qq:'1', imgurl:'def.png'
-                }).then(
+                    email:'1', qq:'1'}).then(
                 function(res) {
                     if (res.code === 400) {
                         ionicToast.show('参数为空，请重新输入', 'middle', false, 1500);
