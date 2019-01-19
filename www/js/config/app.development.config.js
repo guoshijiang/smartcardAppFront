@@ -10,4 +10,4 @@ angular.module('rsc.development.config', []).constant('ENV', {
   // storage: window.localStorage,
   scroll: false,
   imgUrl: 'http://120.78.206.130:8989'
-})
+});

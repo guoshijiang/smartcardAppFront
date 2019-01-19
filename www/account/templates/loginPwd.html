@@ -10,21 +10,15 @@
     <ion-content class="xn-content">
         <div class="login-banner">
             <img class="login-banner-img" src="/img/banner.png" />
-            <ul class="row third-bar text-center login-order">
-                <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='shangye'}" ng-click="vm.changeTag('shangye')"
-                    class="col login-item">普通登陆 </li>
-                <li nav-transition="ios" nav-direction="enter" ng-class="{'active':vm.dele.tab=='mingpian'}" ng-click="vm.changeTag('mingpian')"
-                    class="col login-item">验证码快速登陆</li>
-            </ul>
         </div>
 
-        <div class="inputLogin gap-10">
+        <div class="inputLogin">
             <div class= "login-input">
                 <div class="login-input-img">
                     <img class="login-input-img-phnoe" src="/img/icon_phone.png" />
                 </div>
                 <div class="input-items">
-                    <input ng-model="vm.login.username" type="text" placeholder="请输入你的用户名">
+                    <input ng-model="vm.login.username" type="text" placeholder="请输入您的手机号">
                 </div>
             </div>
 
@@ -36,10 +30,12 @@
                     <input ng-model="vm.login.password" type="password" placeholder="请输入您的密码">
                 </div>
             </div>
+
         </div>
 
         <div class="forget-password">
-            <a href="#/registerPhone">忘记密码</a>
+            <div class="forget-password-left"><a href="#/loginPhone">验证码快速登陆</a></div>
+            <div class="forget-password-right"><a href="#">忘记密码</a></div>
         </div>
 
         <div class="login-register-button">
