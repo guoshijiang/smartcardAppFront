@@ -17,8 +17,8 @@
 
 	<ion-content class="bg-gray xn-content">
 		<div class="book preserve-3d">
-			<div class="list card list-card" ng-repeat="item in turnList" ng-class="{'animation1':turnFlag&&$index==turnFlag-1,'animation2':turnFlag&&$index==turnFlag,'animation3':turnFlag&&$index==turnFlag+1}">
-			  <div class="item item-body">
+			<div class="list card list-card" ng-repeat="item in turnList" ng-class="{'mid':mid==$index,'left':$index < mid,'right':$index > mid,'animation1':next&&$index==turnFlag,'animation2':next&&$index==turnFlag+1,'animation3':next&&$index==turnFlag+2,'animation1-back':pre&&$index==turnFlag1-1,'animation2-back':pre&&$index==turnFlag1,'animation3-back':pre&&$index==turnFlag1+1}">
+			  <div class="item item-body self-item-body">
 			  	<div class="img-box">
 			    	<img class="item-img" src="../../img/QRcode.png" alt="">
 			    	<!-- <qrcode data="http://www.baidu.com" download></qrcode> -->
@@ -34,7 +34,7 @@
 			    	<div class="item">邮箱：{{item.email}}</div>
 			    </div>
 			    <div class="opt-group">
-			    	<button class="button btn-left" ng-click="prePage()"></button>
+			    	<button class="button btn-left" ng-click="prePage($index)"></button>
 			    	<button class="button btn-right" ng-click="nextPage($index)"></button>
 			    </div>
 			  </div>

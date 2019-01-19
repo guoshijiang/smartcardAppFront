@@ -5,25 +5,34 @@ angular
    */
   .controller('FirstCtrl', function($scope, $timeout, ionicToast,FirstServe,$state) {
       $scope.turnList=[]
-      $scope.contentList=[]
-      $scope.prePage = function() {
-        alert('上一页')
+      
+      $scope.prePage = function(index) {
+          
+          if($scope.mid !==0) {
+            $scope.mid = index-1
+          }else {
+            ionicToast.show('已经是第一张了哦')
+            return
+          }
+          $scope.pre = true
+          $scope.next = false
+          $scope.turnFlag1 = index
       };
       $scope.nextPage = function(index) {
-        if(index==1) {
-          $scope.turnFlag = true
-          var obj2 = $scope.turnList.shift()
-          $scope.contentList.push(obj2)
-          var obj1 = $scope.contentList.shift()
-          $scope.turnList.push(obj1)
-        }else {
-          $scope.turnFlag = false
-        }
-        
+           if($scope.mid !==$scope.turnList.length-1) {
+            $scope.mid = index+1
+          }else {
+            ionicToast.show('已经是最后一张了哦')
+            return
+          }
+          $scope.pre = false
+          $scope.next = true
+          $scope.turnFlag = index
       };
       FirstServe.findbyquery({status:1}).then(res=>{
                 if(res.code == 200) {
                     $scope.turnList = res.result.list
+                    $scope.mid = 0
                 }
             })
   })
