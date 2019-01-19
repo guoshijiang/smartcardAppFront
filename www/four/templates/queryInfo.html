@@ -1,4 +1,4 @@
-<ion-view hide-tabs="true" hide-back-button="true">
+<ion-view hide-tabs="true">
     <ion-nav-title>
         <div class="bar bar-positive">
             <div class="button-bar nav-bar">
@@ -8,13 +8,16 @@
                         <input ng-keyup="vm.queryComByKeyWord($event)" ng-change="vm.queryComByKeyWord($event)" type="search" ng-model='vm.query.companyName'
                                placeholder="请输入您要查询的公司名字">
                     </label>
-                    <button class="button button-clear" nav-transition="ios" nav-direction="back" ui-sref='tab.four'>
+                    <!-- <button class="button button-clear" nav-transition="ios" nav-direction="back" ui-sref='tab.four'>
                         取消
-                    </button>
+                    </button> -->
                 </div>
             </div>
         </div>
     </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <i  class="icon-right-min icon-size-min" ui-sref="rsc.common_publish_type">取消</i>
+    </ion-nav-buttons>
     <ion-content>
         <div>
             <div>

@@ -2,50 +2,52 @@
   <ion-nav-title>
     <div class="bar">
       <div class="button-bar nav-bar">
-        <a class="button" nav-transition="ios" nav-direction="enter"></a>
+        <a class="button" nav-transition="ios" nav-direction="enter">我的</a>
       </div>
     </div>
   </ion-nav-title>
-  <ion-content class="bg-gray">
+  <ion-nav-buttons side="right">
+    <i  class="icon-size-min" ui-sref="rsc.common_publish_type">编辑</i>
+</ion-nav-buttons>
+  <ion-content class="bg-gray bg-mine">
     <div class="my-info">
       <div class="login-img">
        <span class="cirle">
           <img ng-src="../img/ben.png" alt="">
         </span>
         <div class="my-info-profile">
-          <p class="name-title">郭世江</p>
-          <p class="personal-info gap-6">架构师  卡得链认证</p>
-          <p class="personal-info gap-6">北京问我科技有限责任公司</p>
+          <p class="name-title">郭世江 <span class="zhi">架构师</span> </p>
+          <p class="personal-info">北京问我科技有限责任公司</p>
+          <p class="personal-info">北京市海淀区东升科技园b座6号楼801</p>
         </div>
-        <div class="block-chain-info gap-30">
-          <div>卡得助力您的商业梦想</div>
-          <div>完善名片信息</div>
+        <div class="block-chain-info gap-10">
+          <div>区块链</div><div>人工智能</div><div>大数据</div>
         </div>
       </div>
     </div>
 
-    <div class="list gap-4">
+    <div class="list gap-20">
       <a nav-transition="ios" nav-direction="forward" href="#/tab/queryCompany" class="item item-icon-left item-icon-right">
         <i class="icon ion-card-compnay"></i> <span class="font-card">企业查询</span>
         <i class="icon ion-ios-arrow-right"></i>
       </a>
     </div>
 
-    <div class="list gap-4">
+    <div class="list">
       <a nav-transition="ios" nav-direction="forward" href="#/tab/queryCompany" class="item item-icon-left item-icon-right">
         <i class="icon ion-company-query"></i> <span class="font-card">客户资料查询</span>
         <i class="icon ion-ios-arrow-right"></i>
       </a>
     </div>
 
-    <div class="list  gap-4">
+    <div class="list  gap-10">
       <a nav-transition="ios" nav-direction="forward" href="#/tab/recommend" class="item item-icon-left item-icon-right">
         <i class="icon ion-like"></i> <span class="font-card">推荐给好友</span>
         <i class="icon ion-ios-arrow-right"></i>
       </a>
     </div>
 
-    <div class="list  gap-4">
+    <div class="list  gap-10">
       <a nav-transition="ios" nav-direction="forward" href="#/tab/setup" class="item item-icon-left item-icon-right">
         <i class="icon ion-setup"></i> <span class="font-card">设置</span>
         <i class="icon ion-ios-arrow-right"></i>

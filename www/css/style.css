@@ -14,10 +14,9 @@
 .text-right {
   text-align: 'rigth';
 }
-.icon_bg {
-  /* background: url('../img/xn/first/yuandian.png') center center; */
-  /* background-size: 97% 115%;
-  margin: 5px 0 5px 0; */
+
+.bg-tab .tab-nav{
+  background: #fff;
 }
 
 .icon_box img {

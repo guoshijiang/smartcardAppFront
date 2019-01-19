@@ -205,7 +205,7 @@ angular.module('smartcard.router', ['ui.router']).config([
       .state('tab.helpDetail', {
           url: '/helpDetail/:id',
           views: {
-              'tab-three': {
+              'tab-four': {
                   templateUrl: 'four/templates/helpDetail.html',
                   controller: 'HelpDetailCtrl'
               }

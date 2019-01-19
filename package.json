@@ -26,7 +26,7 @@
     }
   ],
   "dependencies": {
-    "cordova-android": "^6.3.0",
+    "cordova-android": "6.4.0",
     "cordova-ios": "^4.5.4",
     "cordova-plugin-datepicker": "git+https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git",
     "cordova-plugin-device": "^1.1.4",
