@@ -24,7 +24,6 @@
 
     <ion-list  ng-repeat='item in vm.query.data track by $index'>
       <ion-item  class="item-remove-animate item-icon-right" ui-sref='tab.detail({id:item.id})'>
-
         <div class="mankeep">
           <div class="mankeep-pho">
             <div class = "mankeep-pho-img">
@@ -47,13 +46,13 @@
             <div class="mankeep-address">
               <p >{{item.mkeepAddress}}</p>
             </div>
-
-            <div class="mankeep-tag">
-              <p>{{item.mkeepTag}}</p>
-            </div>
           </div>
-
         </div>
+
+        <div ng-repeat='tagItem in vm.query.tagData track by $index' class="mankeep-tag">
+          <div>{{tagItem}}</div>
+        </div>
+
       </ion-item>
     </ion-list>
     <ion-infinite-scroll ng-if='vm.hasMore' icon="ion-loading-c" immediate-check="false" on-infinite="vm.loadMore()"> </ion-infinite-scroll>

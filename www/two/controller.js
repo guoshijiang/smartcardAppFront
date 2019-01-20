@@ -8,6 +8,7 @@ angular
             page:1,
             pageSize:6,
             data:[],
+            tagData:[],
             isLoading:true,
             hasMore:true
         };
@@ -18,6 +19,9 @@ angular
                 if (res.code === 200) {
                     vm.hasMore = res.result.list.length < 6 ? false : true;
                     vm.query.data = vm.query.data.concat(res.result.list)
+                    for(var i = 0; i < res.result.list.length; i++) {
+                        vm.query.tagData = res.result.list[i].mkeepTag.split(" ");
+                    }
                     vm.query.isLoading = false;
                 }
             })

@@ -85,7 +85,23 @@
 }
 
 .mankeep-tag{
-  margin-top:8px;
+    font-size: 15px;
+    float:left;
+    color: #515151;
+    margin-left:10px;
+}
+
+.mankeep-tag div {
+    height:28px;
+    width:70px;
+    line-height:28px;
+    float:left;
+    display:inline-block;
+    border-radius:10px;
+    text-align:center;
+    border:1px solid #d9d9d9;
+    margin-left:10px;
+    color:#ad9e9e;
 }
 
 .mankeep-tag p {
@@ -187,8 +203,31 @@
   font-size:16px;
 }
 
+.recently-search {
+    font-size: 18px;
+    color:#ababab;
+}
+
 .recently-search-content {
-  font-size: 16px;
+    font-size: 15px;
+    color: #515151;
+    margin-left:10px;
+}
+
+
+.recently-search-content div{
+    height:28px;
+    width:70px;
+    line-height: 28px;
+    display:inline-block;
+    border-radius:10px;
+    text-align:center;
+    border:1px solid #d9d9d9;
+    margin-left:10px;
+    color:#ad9e9e;
+}
+.recently-search-content div:first-child{
+    margin-left:0px;
 }
 
 .bottom-boxs {
