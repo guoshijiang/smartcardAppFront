@@ -22,7 +22,7 @@
       <h4 class="text-gray gap-5">卡得与您同在，助力您的梦想</h4>
     </div>
 
-    <ion-list  ng-repeat='item in vm.query.data track by $index'>
+    <ion-list ng-repeat='item in vm.query.data track by $index'>
       <ion-item  class="item-remove-animate item-icon-right" ui-sref='tab.detail({id:item.id})'>
         <div class="mankeep">
           <div class="mankeep-pho">
@@ -47,11 +47,14 @@
               <p >{{item.mkeepAddress}}</p>
             </div>
           </div>
+
+          <div ng-repeat='tagItem in item.Tags track by $index' class="mankeep-tag">
+            <div>{{tagItem}}</div>
+          </div>
+
         </div>
 
-        <div ng-repeat='tagItem in vm.query.tagData track by $index' class="mankeep-tag">
-          <div>{{tagItem}}</div>
-        </div>
+
 
       </ion-item>
     </ion-list>

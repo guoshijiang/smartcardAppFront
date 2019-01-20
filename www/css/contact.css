@@ -1,6 +1,8 @@
 .mankeep {
+    margin:0px;
+    padding:0px;
   width:100%;
-  height:120px;
+  height:138px;
 }
 
 .mkeep-detail{
@@ -17,10 +19,14 @@
   display:inline-block;
 }
 
+.mankeep-pho-img {
+
+}
+
 .mankeep-info {
   width:68%;
-  float: left;
-  display: inline-block;
+  float:left;
+  display:inline-block;
 }
 
 .pho-img {
@@ -37,7 +43,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width:100%;
     height:40vh;
     border-bottom:1px solid #ccc;
 }
@@ -53,7 +59,7 @@
 }
 
 .info-name p {
-  font-size:21px;
+  font-size:22px;
   font-family: Roboto;
   color: #000000;
 }
@@ -65,29 +71,33 @@
 }
 
 .info-position p {
-  font-size:16px;
+    color: #888888;
+  font-size:18px;
 }
 
 .mankeep-company {
-  margin-top:8px;
+  margin-top:10px;
 }
 
 .mankeep-company p {
-  font-size:16px;
+  color: #888888;
+  font-size:18px;
 }
 
 .mankeep-address {
-  margin-top:8px;
+  margin-top:10px;
 }
 
 .mankeep-address p {
-  font-size:16px;
+    color: #888888;
+  font-size:18px;
 }
 
 .mankeep-tag{
-    font-size: 15px;
+    margin-top:12px;
+    font-size:15px;
     float:left;
-    color: #515151;
+    color:#515151;
     margin-left:10px;
 }
 
@@ -98,6 +108,7 @@
     float:left;
     display:inline-block;
     border-radius:10px;
+    font-size:14px;
     text-align:center;
     border:1px solid #d9d9d9;
     margin-left:10px;

@@ -1,5 +1,5 @@
 angular
-  .module('smartcard.two.ctrl', [])
+    .module('smartcard.two.ctrl', [])
     .controller('TwoTabCtrl', function($scope, $timeout, TwoServe) {
         var vm = ($scope.vm = this)
         vm.query = {
@@ -19,15 +19,15 @@ angular
                 if (res.code === 200) {
                     vm.hasMore = res.result.list.length < 6 ? false : true;
                     vm.query.data = vm.query.data.concat(res.result.list)
-                    for(var i = 0; i < res.result.list.length; i++) {
-                        vm.query.tagData = res.result.list[i].mkeepTag.split(" ");
+                    for(var i = 0; i < vm.query.data.length; i++) {
+                        vm.query.data[i].Tags = vm.query.data[i].mkeepTag.split(" ");
                     }
                     vm.query.isLoading = false;
                 }
             })
-            .finally(function() {
-                vm.query.isLoading = false;
-            });
+                .finally(function() {
+                    vm.query.isLoading = false;
+                });
         };
 
         $scope.doRefresh = function() {
@@ -61,12 +61,16 @@ angular
 
     .controller('DetailCtrl', function($scope, $stateParams, TwoServe) {
         var vm = ($scope.vm = this)
+        vm.query = {
+            tagData:[]
+        }
         vm.init = function() {
             if ($stateParams.id === 0) return false
             TwoServe.findMkeepById({ id: $stateParams.id }).then(
                 function(res) {
                     if (res.code === 200) {
                         vm.query = res.result;
+                        vm.query.tagData = res.result.mkeepTag.split(" ");
                     }
                 });
         };
@@ -75,53 +79,53 @@ angular
         });
     })
 
-  .controller('InterpesonSearchCtrl', function($scope, $timeout, TwoServe) {
-      var vm = ($scope.vm = this);
-      vm.query = {
-          page:1,
-          pageSize:6,
-          tag:'',
-          mKeepMark:'',
-          dataList:[],
-          hasMore:true
-      };
-      vm.queryMankeepKeyWord = function() {
-          if (!vm.query.mKeepMark) {
-              vm.query.dataList = [];
-              return false;
-          }
-          TwoServe.searchMkeepByKeyword({
-              page:vm.query.page,
-              pageSize:vm.query.pageSize,
-              companyMark: vm.query.mKeepMark,
-              business: vm.query.mKeepMark,
-              cardMark:vm.query.mKeepMark,
-          }).then(function(res) {
-              if (res.code === 200) {
-                      vm.query.tag = 2
-                      if(res.result.list.length === 0){
-                          vm.query.dataList = [];
-                      }
-                      vm.hasMore = res.result.list.length < 6 ? false : true;
-                      vm.query.dataList = vm.query.dataList.concat(res.result.list);
-                  }
-              });
-      };
+    .controller('InterpesonSearchCtrl', function($scope, $timeout, TwoServe) {
+        var vm = ($scope.vm = this);
+        vm.query = {
+            page:1,
+            pageSize:6,
+            tag:'',
+            mKeepMark:'',
+            dataList:[],
+            hasMore:true
+        };
+        vm.queryMankeepKeyWord = function() {
+            if (!vm.query.mKeepMark) {
+                vm.query.dataList = [];
+                return false;
+            }
+            TwoServe.searchMkeepByKeyword({
+                page:vm.query.page,
+                pageSize:vm.query.pageSize,
+                companyMark: vm.query.mKeepMark,
+                business: vm.query.mKeepMark,
+                cardMark:vm.query.mKeepMark,
+            }).then(function(res) {
+                if (res.code === 200) {
+                    vm.query.tag = 2
+                    if(res.result.list.length === 0){
+                        vm.query.dataList = [];
+                    }
+                    vm.hasMore = res.result.list.length < 6 ? false : true;
+                    vm.query.dataList = vm.query.dataList.concat(res.result.list);
+                }
+            });
+        };
 
-      vm.loadMore = function() {
-          vm.query.page += 1
-          vm.queryMankeepKeyWord()
-          $timeout(function() {
-              $scope.$broadcast('scroll.infiniteScrollComplete');
-          }, 300);
-      };
+        vm.loadMore = function() {
+            vm.query.page += 1
+            vm.queryMankeepKeyWord()
+            $timeout(function() {
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+            }, 300);
+        };
 
-      $scope.$on('$ionicView.beforeEnter', function() {
-          vm.query.tag = 1;
-      });
-  })
+        $scope.$on('$ionicView.beforeEnter', function() {
+            vm.query.tag = 1;
+        });
+    })
 
-	.controller('searchResultCtrl',function($scope, $stateParams, TwoServe) {
+    .controller('searchResultCtrl',function($scope, $stateParams, TwoServe) {
         var vm = ($scope.vm = this)
         vm.init = function() {
             if ($stateParams.id === 0) return false
@@ -135,4 +139,4 @@ angular
         $scope.$on('$ionicView.beforeEnter', function() {
             vm.init();
         });
-	});
+    });
