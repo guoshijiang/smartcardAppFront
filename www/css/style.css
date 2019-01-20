@@ -593,7 +593,7 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
   left: 155px;
   position: absolute;
   font-family: "";
-  background: url('../img/icon/up_normal.png') center center no-repeat;
+  background: url('../img/icon/Up_normal.png') center center no-repeat;
   background-size: cover;
 }
 .tab-item .ion-camera::before{
@@ -605,6 +605,6 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
   top: -37px;
   left: 155px;
   font-family: "";
-  background: url('../img/icon/up_selected.png') center center no-repeat;
+  background: url('../img/icon/Up_selected.png') center center no-repeat;
   background-size: cover;
 }

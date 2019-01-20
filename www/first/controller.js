@@ -28,23 +28,18 @@ angular
           $scope.next = true
           $scope.turnFlag = index
       };
-      FirstServe.findbyquery({userUuid:localStorage.getItem("userUuid"), status:1}).then(res=>{
-                if(res.code == 200) {
-                    $scope.turnList = res.result.list
-                    $scope.mid = 0
-                }
-            })
+      $scope.init = function(){
+        FirstServe.findbyquery({userUuid:localStorage.getItem("userUuid"), status:1})
+        .then( function(res){
+                  if(res.code == 200) {
+                      $scope.turnList = res.result.list
+                      $scope.mid = 0
+                  }
+              })
+      }
+      $scope.init()
   })
-      
-/*
-  .controller('TabCtrl', function($scope, $timeout) {
-    console.log('开始')
-    var vm = ($scope.vm = this)
-    $scope.go = function() {
-      console.log('安静点的')
-    }
-  })
-*/
+
   .controller('CardModelCtrl', function($scope, $timeout, ionicToast) {
     console.log('开始')
     var vm = ($scope.vm = this)
@@ -128,7 +123,7 @@ angular
 				email: vm.form.email,
 				cardType: 1,
     	}
-    	FirstServe.addcardmessage(param).then(res=> {
+    	FirstServe.addcardmessage(param).then(function(res) {
     		if(res.code == 200) {
     			ionicToast.show('添加成功')
     			$state.go('tab.first')
@@ -148,8 +143,6 @@ angular
           userUuid:localStorage.getItem("userUuid"),
           status:1,
       }
-      vm.tabs = [{active:false},{active:false},{active:false}]
-      console.log()
       vm.selectTag = function(num) {
           vm.query.tag = num
           if (!vm.query.userUuid) return false;

@@ -15,7 +15,7 @@
 }
 
 .ion-setup::before {
-  content: url("../img/icon_setup.png") !important;
+  content: url("../img/icon_Setup.png") !important;
 }
 
 .ion-help-and-feedback::before{
@@ -23,7 +23,7 @@
 }
 
 .ion-feedback::before {
-  content: url("../img/icon_feedback.png") !important;
+  content: url("../img/icon_Feedback.png") !important;
 }
 
 .ion-interpersonal-connections::before {
