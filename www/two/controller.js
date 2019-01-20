@@ -19,8 +19,8 @@ angular
                 if (res.code === 200) {
                     vm.hasMore = res.result.list.length < 6 ? false : true;
                     vm.query.data = vm.query.data.concat(res.result.list)
-                    for(var i = 0; i < res.result.list.length; i++) {
-                        vm.query.tagData = res.result.list[i].mkeepTag.split(" ");
+                    for(var i = 0; i < vm.query.data.length; i++) {
+                        vm.query.data[i].Tags = vm.query.data[i].mkeepTag.split(" ");
                     }
                     vm.query.isLoading = false;
                 }

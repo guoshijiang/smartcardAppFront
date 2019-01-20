@@ -21,7 +21,6 @@
       <h4 class="text-gray gap-5">请搜索您感兴趣的行业去认识您需要的人脉</h4>
       <h4 class="text-gray gap-5">卡得与您同在，助力您的梦想</h4>
     </div>
-
     <ion-list  ng-repeat='item in vm.query.data track by $index'>
       <ion-item  class="item-remove-animate item-icon-right" ui-sref='tab.detail({id:item.id})'>
         <div class="mankeep">
@@ -49,7 +48,7 @@
           </div>
         </div>
 
-        <div ng-repeat='tagItem in vm.query.tagData track by $index' class="mankeep-tag">
+        <div ng-repeat='tagItem in item.Tags track by $index' class="mankeep-tag">
           <div>{{tagItem}}</div>
         </div>
 
