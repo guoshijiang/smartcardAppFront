@@ -5,7 +5,6 @@ angular
    */
   .controller('FirstCtrl', function($scope, $timeout, ionicToast,FirstServe,$state) {
       $scope.turnList=[]
-      
       $scope.prePage = function(index) {
           
           if($scope.mid !==0) {
@@ -29,7 +28,7 @@ angular
           $scope.next = true
           $scope.turnFlag = index
       };
-      FirstServe.findbyquery({status:1}).then(res=>{
+      FirstServe.findbyquery({userUuid:localStorage.getItem("userUuid"), status:1}).then(res=>{
                 if(res.code == 200) {
                     $scope.turnList = res.result.list
                     $scope.mid = 0
@@ -144,10 +143,9 @@ angular
   })
 
   .controller('TabCtrl', function($scope, FirstServe) {
-      //console.log("进来了",FirstServe);
       var vm = ($scope.vm = this)
       vm.query = {
-          userUuid: '1e8adc5e-eb9e-4d63-8ffa-408e88ce92a7',
+          userUuid:localStorage.getItem("userUuid"),
           status:1,
       }
       vm.tabs = [{active:false},{active:false},{active:false}]
@@ -155,15 +153,15 @@ angular
       vm.selectTag = function(num) {
           vm.query.tag = num
           if (!vm.query.userUuid) return false;
-              FirstServe.findbyquery({userUuid: vm.query.userUuid, status:vm.query.status}).
+              FirstServe.findbyquery({userUuid:vm.query.userUuid, status:vm.query.status}).
               then(function(res) {
-                      console.log('查询名片', res)
+                      console.log('查询名片', res.result.list);
                       // if (data.Status === 200) {
                       //     vm.query.data = res;
                       // }
                   });
       }
-         // vm.selectTag()
+      // vm.selectTag()
       $scope.$on('$ionicView.beforeEnter', function() {
           vm.query.tag = false
       })

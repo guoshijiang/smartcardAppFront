@@ -61,7 +61,7 @@ angular
                 ionicToast.show('用户名和密码为空', 'middle', false, 1500);
                 return ;
             }
-            AccountServe.loginByUserAndPwd({ username: vm.login.username, password:vm.login.password}).then(
+            AccountServe.loginByUserAndPwd({ username:vm.login.username, password:vm.login.password}).then(
                 function(res) {
                     if(res.code === 500){
                         console.log(res);
@@ -69,9 +69,9 @@ angular
                     }
                     else if (res.code === 200) {
                         vm.query = res.result;
-                        localStorage.setItem("token", res.token)
-                        localStorage.setItem("userId", res.userId)
-                        localStorage.setItem("userUuid", res.userUuid);
+                        localStorage.setItem("token", res.result.token)
+                        localStorage.setItem("userId", res.result.id)
+                        localStorage.setItem("userUuid", res.result.userUuid);
                         $state.go('tab.first');
                     }
                 });
@@ -146,7 +146,7 @@ angular
                 return ;
             }
             AccountServe.registerInfoToCard(
-                {code:localStorage.getItem("verifyCode"), username:vm.registerCtrl.realName, password:localStorage.getItem("password"),
+                {code:localStorage.getItem("verifyCode"), token:"232222", username:vm.registerCtrl.realName, password:localStorage.getItem("password"),
                     phone:localStorage.getItem("phone"), weichat:'1',
                     email:'1', qq:'1'}).then(
                 function(res) {
@@ -180,6 +180,7 @@ angular
                             email: '未知',
                             cardType: 1,
                         }
+
                         AccountServe.addCardMessage(param).then(
                             function(res) {
                                 console.log("添加名片信息 = "+ JSON.stringify(res))

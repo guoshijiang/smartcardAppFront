@@ -1,10 +1,9 @@
 angular
   .module('smartcard.two.ctrl', [])
-
     .controller('TwoTabCtrl', function($scope, $timeout, TwoServe) {
         var vm = ($scope.vm = this)
         vm.query = {
-            userId:10,
+            userId:localStorage.getItem("userId"),
             status:1,
             page:1,
             pageSize:6,
@@ -13,7 +12,7 @@ angular
             hasMore:true
         };
         vm.findMkeepByUserid = function() {
-            TwoServe.findMkeepByUserid({userId:vm.query.userId, status: vm.query.status,
+            TwoServe.findMkeepByUserid({userId:vm.query.userId, status:vm.query.status,
                 page:vm.query.page, pageSize:vm.query.pageSize}).
             then(function(res) {
                 if (res.code === 200) {
@@ -122,7 +121,7 @@ angular
         var vm = ($scope.vm = this)
         vm.init = function() {
             if ($stateParams.id === 0) return false
-            TwoServe.searchMkeepDetail({ id: $stateParams.id }).then(
+            TwoServe.searchMkeepDetail({ id:$stateParams.id }).then(
                 function(res) {
                     if (res.code === 200) {
                         vm.query = res.result;
