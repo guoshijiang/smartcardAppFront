@@ -244,15 +244,14 @@
 .bottom-boxs {
     margin-top:30px;
     width:80%;
-    height:600px;
-    float: left;
+    float:left;
     display:inline-block;
 }
 
 .bottom-boxs-space {
     margin-top:30px;
     width:10%;
-    height:600px;
+    height:400px;
     float:left;
     display:inline-block;
 }
