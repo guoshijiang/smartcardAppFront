@@ -1,7 +1,9 @@
 angular
     .module('smartcard.two.ctrl', [])
     .controller('TwoTabCtrl', function($scope, $timeout, TwoServe) {
-        var vm = ($scope.vm = this)
+
+
+        var vm = ($scope.vm = this);
         vm.query = {
             userId:localStorage.getItem("userId"),
             status:1,
@@ -32,7 +34,7 @@ angular
 
         $scope.doRefresh = function() {
             vm.query = {
-                userId:10,
+                userId:localStorage.getItem("userId"),
                 status:1,
                 page:1,
                 pageSize:6,
