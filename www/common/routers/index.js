@@ -48,15 +48,6 @@ angular.module('smartcard.router', ['ui.router']).config([
           }
         }
       })
-      .state('tab.cardModel', {
-        url: '/cardModel',
-        views: {
-          'tab-first': {
-            templateUrl: 'first/templates/cardModel.html',
-            controller: 'CardModelCtrl'
-          }
-        }
-      })
 
       .state('tab.personalCard', {
         url: '/personalCard',

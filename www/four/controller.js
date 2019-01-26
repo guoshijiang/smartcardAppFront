@@ -3,12 +3,34 @@ angular
   /**
    *首页控制器
    */
-  .controller('FourTabCtrl', function($scope) {
-    $scope.settings = {
-      enableFriends: true
-    }
-    var self = this
-    console.log('第四瓶')
+  .controller('FourTabCtrl', function($scope, $timeout, FourServe) {
+      var vm = ($scope.vm = this);
+      vm.query = {
+          id:localStorage.getItem("userId"),
+          status:1,
+          resData:'',
+          advanceData:[]
+      };
+      vm.init = function() {
+          FourServe.findUserById({id: vm.query.id}).then(function (res) {
+              if (res.code === 200) {
+                  console.log(res.result);
+              }
+          });
+
+          FourServe.findUserInfoById({userId:vm.query.id}).then(function (res) {
+              if (res.code === 200) {
+                  console.log(res.result);
+                  vm.query.resData = res.result;
+                  vm.query.advanceData = res.result.advance.split(" ");
+              }
+          });
+
+
+      }
+      $scope.$on('$ionicView.beforeEnter', function() {
+          vm.init();
+      });
   })
 
   .controller('ReconmentCtrl', function (

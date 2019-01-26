@@ -16,12 +16,12 @@
           <img ng-src="img/ben.png" alt="">
         </span>
         <div class="my-info-profile">
-          <p class="name-title">郭世江 <span class="zhi">架构师</span> </p>
-          <p class="personal-info">北京问我科技有限责任公司</p>
-          <p class="personal-info">北京市海淀区东升科技园b座6号楼801</p>
+          <p class="name-title">{{vm.query.resData.name}} <span class="zhi">{{vm.query.resData.position}}</span> </p>
+          <p class="personal-info">{{vm.query.resData.companyName}}</p>
+          <p class="personal-info">{{vm.query.resData.companyAddress}}</p>
         </div>
-        <div class="block-chain-info gap-10">
-          <div>区块链</div><div>人工智能</div><div>大数据</div>
+        <div class="block-chain-info gap-10 mankeep-tag" ng-repeat="itemTag in vm.query.advanceData track by $index">
+          <div>{{itemTag}}</div>
         </div>
       </div>
     </div>
