@@ -4,11 +4,11 @@
  * email:
  *
  */
-angular.module('rsc.service.common', ['rsc.service.phone', 'rsc.service.rest'])
+angular.module('rsc.service.common', ['rsc.service.phone'])
     /**
      * Ionic 弹窗
      */
-    .factory('XnAlert', function ($ionicPopup, $ionicPopover, $cordovaDialogs, $log, $ionicModal, $cordovaToast) {
+    .factory('smdkiAlert', function ($ionicPopup, $ionicPopover, $cordovaDialogs, $log, $ionicModal, $cordovaToast) {
         /**
          * 弹出提示框
          * @param text

@@ -586,24 +586,28 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 }
 .tab-item .ion-ios-camera-outline::before{
   content: ' ';
-  width: 65px;
+  /* width: 65px;
   height: 65px;
-  border-radius: 50%;
-  top: -37px;
-  left: 155px;
-  position: absolute;
+  border-radius: 50%; */
+  /* top: -37px;
+  left: 155px; */
+  /* position: absolute; */
+  width: 54px;
+  height: 30px;
   font-family: "";
   background: url('../img/icon/Up_normal.png') center center no-repeat;
   background-size: cover;
 }
 .tab-item .ion-camera::before{
   content: ' ';
-  width: 65px;
+  /* width: 65px;
   height: 65px;
   position: absolute;
   border-radius: 50%;
   top: -37px;
-  left: 155px;
+  left: 155px; */
+  width: 54px;
+  height: 30px;
   font-family: "";
   background: url('../img/icon/Up_selected.png') center center no-repeat;
   background-size: cover;
