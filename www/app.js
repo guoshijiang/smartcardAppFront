@@ -8,7 +8,7 @@
 angular
   .module('starter', [
     'ionic',
-    // 'ngCordova',
+    'ngCordova',
     'starter.controllers',
     'starter.services',
     'ionic-toast',
