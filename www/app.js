@@ -8,7 +8,7 @@
 angular
   .module('starter', [
     'ionic',
-    // 'ngCordova',
+    'ngCordova',
     'starter.controllers',
     'starter.services',
     'ionic-toast',
@@ -17,8 +17,15 @@ angular
     'smartcard.two.ctrl',
     'smartcard.three.ctrl',
     'smartcard.four.ctrl',
+    
     'rsc.development.config',
-      'smartcard.account.ctrl'
+    'rsc.service.common.bak',
+    'smartcard.account.ctrl',
+    
+    'rsc.service.common',
+    'rsc.service.phone',
+    'rsc.common.directives',
+    
     // 'restangular',
   ])
 
@@ -26,6 +33,7 @@ angular
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
+     
       if (
         window.cordova &&
         window.cordova.plugins &&
@@ -49,7 +57,7 @@ angular
             $rootScope.hideTabs = value
           })
         })
-
+        // console.log('smdkAlert',smdkAlert)
         scope.$on('$ionicView.beforeLeave', function() {
           $rootScope.hideTabs = false
         })

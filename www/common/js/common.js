@@ -6,9 +6,7 @@
  */
 angular.module('rsc.service.common.bak', [])
 
-    .constant("commonString", {
-        phoneReg: '(^13[0-9]{9}$)|(^15[0-9]{9}$)|(^17[0-9]{9}$)|(^18[012356789][0-9]{8}$)'
-    })
+  
     /**
      * 浏览器本地存储操作
      */
@@ -38,7 +36,7 @@ angular.module('rsc.service.common.bak', [])
     /**
      * Ionic 弹窗
      */
-    .factory('iAlert', function ($ionicPopup, $ionicPopover, $cordovaDialogs, $log, $ionicModal) {
+    .factory('smdkAlert', function ($ionicPopup, $ionicPopover, $log, $ionicModal) {
         /**
          * 弹出提示框
          * @param text
@@ -198,8 +196,6 @@ angular.module('rsc.service.common.bak', [])
 
         };
 
-
-
         return {
             alert: showAlert,
             confirm: confirm,
@@ -244,7 +240,7 @@ angular.module('rsc.service.common.bak', [])
             interceptor.response = function (response) {
                 // console.log('response',response)
                 if (response.data.status == 'err' && response.data.msg == 'auth_failed') {
-                    // iAlert.alert('请重新登录',function () {
+                    // smdkAlert.alert('请重新登录',function () {
                     //     window.alert('请重新登录')
                     Storage.remove('userInfo');
                     $location.path("/login");

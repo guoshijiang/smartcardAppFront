@@ -16,8 +16,8 @@
           <img ng-src="img/ben.png" alt="">
         </span>
         <div class="my-info-profile">
-          <p class="name-title">{{vm.query.resData.name}} <span class="zhi">{{vm.query.resData.position}}</span> </p>
-          <p class="personal-info">{{vm.query.resData.companyName}}</p>
+          <p class="name-title "   telnum='13261886450'>{{vm.query.resData.name || '马云'}} <span class="zhi">{{vm.query.resData.position}}</span> </p>
+          <p class="personal-info" >{{vm.query.resData.companyName || '天津木姜子科技'}}</p>
           <p class="personal-info">{{vm.query.resData.companyAddress}}</p>
         </div>
         <div class="block-chain-info gap-10 mankeep-tag" ng-repeat="itemTag in vm.query.advanceData track by $index">
@@ -59,10 +59,21 @@
         <i class="icon ion-ios-arrow-right"></i>
       </a>
     </div>
-
       <div class="list gap-4">
         <a nav-transition="ios" nav-direction="forward" href="#/tab/feedBack" class="item  item-icon-left item-icon-right">
           <i class="icon ion-feedback"></i> <span class="font-card">反馈</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+      </div>
+      <div class="list gap-4" xn-call>
+        <a nav-transition="ios" nav-direction="forward" class="item  item-icon-left item-icon-right">
+          <i class="icon ion-feedback"></i> <span class="font-card">测试打电话</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+      </div>
+      <div class="list gap-4" smdk-img-tool>
+        <a nav-transition="ios" nav-direction="forward" class="item  item-icon-left item-icon-right">
+          <i class="icon ion-feedback"></i> <span class="font-card">测试上传图片</span>
           <i class="icon ion-ios-arrow-right"></i>
         </a>
       </div>

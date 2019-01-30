@@ -70,18 +70,18 @@ angular.module('rsc.service.phone', [])
     /**
      * 微信分享
      */
-    .service('ShareWeChat', function (iAlert, EnumType) {
+    .service('ShareWeChat', function (smdkAlert, EnumType) {
 
         var check = function () {
             if (typeof Wechat === 'undefined') {
-                iAlert.alert('插件未安装!');
+                smdkAlert.alert('插件未安装!');
                 return false;
             }
         }
         var checkWexin = function () {
             Wechat.isInstalled(function (installed) {
                 if (!installed) {
-                    iAlert.alert('请先安装微信!');
+                    smdkAlert.alert('请先安装微信!');
                     return false;
                 }
             })
@@ -215,10 +215,10 @@ angular.module('rsc.service.phone', [])
                 // alert(JSON.stringify(params));
 
                 Wechat.share(params, function () {
-                    iAlert.alert('分享成功!');
+                    smdkAlert.alert('分享成功!');
                 }, function (reason) {
                     // $log.debug('分享参数',params);
-                    iAlert.alert('分享失败!' + reason)
+                    smdkAlert.alert('分享失败!' + reason)
                 });
 
 
@@ -650,13 +650,13 @@ angular.module('rsc.service.phone', [])
     /**
      * 分享功能弹窗
      */
-    .service('ShareHelp', function (iAlert, $ionicModal, EnumType, ShareWeChat, $state, $cordovaClipboard, SmsHelp) {
+    .service('ShareHelp', function (smdkAlert, $ionicModal, EnumType, ShareWeChat, $state, $cordovaClipboard, SmsHelp) {
 
 
         return {
             initShare: function ($scope, shareInfo) {
                 var alertQR = function () {
-                    iAlert.alert('<img class="center-block" src="./img/QR.png"></img><h5 class="text-center">扫描二维码下载app</h5>')
+                    smdkAlert.alert('<img class="center-block" src="./img/QR.png"></img><h5 class="text-center">扫描二维码下载app</h5>')
                 }
                 $scope.shareOpts = shareInfo.opts;
                 $scope.copyFailed = function (copy) {
@@ -671,18 +671,18 @@ angular.module('rsc.service.phone', [])
                         .copy($scope.shareInfo.msg.title + $scope.shareInfo.msg.description + $scope.shareInfo.msg.url)
                         .then(function () {
                             // success
-                            iAlert.alert(($scope.shareInfo.opts.copy_msg || (($scope.shareInfo.msg.type ? $scope.shareInfo.msg.type : '') + $scope.shareInfo.msg.title + $scope.shareInfo.msg.description)) + '复制成功!');
+                            smdkAlert.alert(($scope.shareInfo.opts.copy_msg || (($scope.shareInfo.msg.type ? $scope.shareInfo.msg.type : '') + $scope.shareInfo.msg.title + $scope.shareInfo.msg.description)) + '复制成功!');
 
 
                             // window.alert(($scope.shareInfo.opts.copy_msg || $scope.shareInfo.msg.description) + '复制成功!');
                         }, function () {
                             // error
-                            iAlert.alert('复制失败!');
+                            smdkAlert.alert('复制失败!');
                         });
                 }
                 //复制成功
                 $scope.copySuccess = function () {
-                    iAlert.alert(($scope.shareInfo.opts.copy_msg || (($scope.shareInfo.msg.type ? $scope.shareInfo.msg.type : '') + $scope.shareInfo.msg.title + $scope.shareInfo.msg.description)), function () {
+                    smdkAlert.alert(($scope.shareInfo.opts.copy_msg || (($scope.shareInfo.msg.type ? $scope.shareInfo.msg.type : '') + $scope.shareInfo.msg.title + $scope.shareInfo.msg.description)), function () {
                         $scope.modal.hide();
                     }, '复制成功')
                 }
@@ -737,7 +737,7 @@ angular.module('rsc.service.phone', [])
                             // if (ionic.Platform.isWebView()) {
                             //     $scope.modal.hide();
                             // } else {
-                            //     iAlert.alert('jjj')
+                            //     smdkAlert.alert('jjj')
                             // }
                             break;
                         case 'wechat':

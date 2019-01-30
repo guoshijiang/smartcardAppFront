@@ -87,7 +87,7 @@ angular.module('rsc.common.services.public', ['ionic-toast', 'ion-gallery'])
             interceptor.response = function (response) {
                 // console.log('response',response)
                 if (response.data.status == 'err' && response.data.msg == 'auth_failed') {
-                    // iAlert.alert('请重新登录',function () {
+                    // smdkAlert.alert('请重新登录',function () {
                     //     window.alert('请重新登录')
                     Storage.remove('userInfo');
                     $location.path("/login");
