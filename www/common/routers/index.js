@@ -79,6 +79,27 @@ angular.module('smartcard.router', ['ui.router']).config([
         }
       })
 
+
+        .state('tab.personInfo', {
+            url: '/personInfo',
+            views: {
+                'tab-first': {
+                    templateUrl: 'first/templates/personInfo.html',
+                    controller: 'PersonInfoCtrl'
+                }
+            }
+        })
+
+        .state('tab.companyInfo', {
+            url: '/companyInfo',
+            views: {
+                'tab-first': {
+                    templateUrl: 'first/templates/companyInfo.html',
+                    controller: 'CompanyInfoCtrl'
+                }
+            }
+        })
+
       //第二个模块
       .state('tab.two', {
         url: '/two',

@@ -1,0 +1,68 @@
+<ion-view hide-tabs="true">
+    <ion-nav-title>
+        <div class="bar bar-positive">
+            <div class="button-bar nav-bar">
+                <a class="button">个人信息</a>
+            </div>
+        </div>
+    </ion-nav-title>
+
+    <ion-content class="xn-content">
+        <div  class="inputLogin gap-10">
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-code" src="img/icon_Code_xhdpi.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.personInfo.name" type="text" placeholder="请输入您的名字">
+                </div>
+            </div>
+
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.personInfo.position" type="text" placeholder="请输入您的职位">
+                </div>
+            </div>
+
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.personInfo.phone" type="text" placeholder="请输入您的手机号码">
+                </div>
+            </div>
+
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.personInfo.email" type="text" placeholder="请输入您的邮箱">
+                </div>
+            </div>
+
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.personInfo.cardMark" type="text" placeholder="请输入您个人标签">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="register-confirm">
+            <div class="confirm-space-one"></div>
+            <div class="register-buttons" ng-click="vm.commitPersonInfo()">
+                <span>下一步</span>
+            </div>
+            <div class="confirm-space-two"></div>
+        </div>
+
+    </ion-content>
+</ion-view>

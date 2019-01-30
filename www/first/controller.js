@@ -35,18 +35,108 @@ angular
                       $scope.turnList = res.result.list
                       $scope.mid = 0
                   }
-              })
+              });
       }
-      $scope.init()
+      $scope.init();
   })
 
-  .controller('CardModelCtrl', function($scope, $timeout, ionicToast) {
-    console.log('开始')
-    var vm = ($scope.vm = this)
-    $scope.go = function() {
-      console.log('安静点的')
-    }
-  })
+    .controller('PersonInfoCtrl', function($scope, $timeout, $state, ionicToast) {
+        var vm = ($scope.vm = this);
+        vm.personInfo = {
+            name:'',
+            position:'',
+            phone:'',
+            email:'',
+            cardMark:''
+        };
+        vm.commitPersonInfo = function () {
+            if (!vm.personInfo.name) {
+                ionicToast.show('您的用户名为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+            if(!vm.personInfo.position ) {
+                ionicToast.show('您的职位为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+            if(!vm.personInfo.phone) {
+                ionicToast.show('您的手机号为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+            if(!vm.personInfo.email) {
+                ionicToast.show('您的邮件为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+
+            if(!vm.personInfo.cardMark){
+                ionicToast.show('您的个人标签为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+            localStorage.setItem("pName", vm.personInfo.name);
+            localStorage.setItem("pPosition", vm.personInfo.position);
+            localStorage.setItem("pPhone", vm.personInfo.phone);
+            localStorage.setItem("pEmail", vm.personInfo.email);
+            localStorage.setItem("pCardMark",vm.personInfo.cardMark);
+            $state.go('tab.companyInfo');
+        };
+    })
+
+    .controller('CompanyInfoCtrl', function($scope, $timeout, $state, ionicToast) {
+        var vm = ($scope.vm = this);
+        vm.companyInfo = {
+            companyName:'',
+            companyAddress:'',
+            companyTel:'',
+            companyFax:'',
+            companyBusiness:'',
+            companyMark:'',
+            companyPro:''
+        };
+        vm.commitConpanyInfo = function () {
+            if(!vm.companyInfo.companyName) {
+                ionicToast.show('您输入的公司的名字为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+
+            if (!vm.companyInfo.companyAddress) {
+                ionicToast.show('您输入的公司的地址为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+
+            if (!vm.companyInfo.companyTel) {
+                ionicToast.show('您输入的公司的电话为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+
+            if (!vm.companyInfo.companyFax) {
+                ionicToast.show('您输入的公司的传真为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+
+            if (!vm.companyInfo.companyBusiness) {
+                ionicToast.show('您输入的公司的业务为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+
+            if (!vm.companyInfo.companyMark) {
+                ionicToast.show('您输入的公司的标签为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+
+            if (!vm.companyInfo.companyPro) {
+                ionicToast.show('您输入的公司的简介为空,请检查并输入', 'middle', false, 1500);
+                return ;
+            }
+            localStorage.setItem("pCompanyName", vm.companyInfo.companyName);
+            localStorage.setItem("pCompanyAddress", vm.companyInfo.companyAddress);
+            localStorage.setItem("pCompanyTel", vm.companyInfo.companyTel);
+            localStorage.setItem("pCompanyFax", vm.companyInfo.companyFax);
+            localStorage.setItem("pCompanyBusiness", vm.companyInfo.companyBusiness);
+            localStorage.setItem("pCompanyMark", vm.companyInfo.companyMark);
+            localStorage.setItem("pCompanyPro", vm.companyInfo.companyPro);
+            $state.go('tab.addCard');
+
+        };
+    })
 
   .controller('PersonalCardCtrl', function($scope, $timeout, ionicToast) {
     console.log('开始')
@@ -91,16 +181,17 @@ angular
     	if(vm.form.brandLabel.trim() !== '') {
     		const list = $scope.labelList
     		if(list.indexOf(vm.form.brandLabel.trim())!==-1) {
-    				ionicToast.show('标签已存在不能重复')
+    				ionicToast.show('标签已存在不能重复');
     		}else {
     			$scope.labelList.push(vm.form.brandLabel.trim())
     		}
 
     	}else{
-    		ionicToast.show('标签不能为空和空白')
+    		ionicToast.show('标签不能为空和空白');
     	}
-    	vm.form.brandLabel=''
+    	vm.form.brandLabel='';
     }
+
     $scope.addcard = function() {
     	const param = {
     		userUuid:localStorage.getItem("userUuid"),
