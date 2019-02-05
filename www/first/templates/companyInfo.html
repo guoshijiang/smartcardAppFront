@@ -1,0 +1,84 @@
+<ion-view hide-tabs="true">
+    <ion-nav-title>
+        <div class="bar bar-positive">
+            <div class="button-bar nav-bar">
+                <a class="button">公司信息</a>
+            </div>
+        </div>
+    </ion-nav-title>
+
+    <ion-content class="xn-content">
+        <div  class="inputLogin gap-10">
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-code" src="img/icon_Code_xhdpi.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.companyInfo.companyName" type="text" placeholder="请输入公司的名字">
+                </div>
+            </div>
+
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.companyInfo.companyAddress" type="text" placeholder="请输入公司详细地址">
+                </div>
+            </div>
+
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.companyInfo.companyBusiness" type="text" placeholder="请输入公司的主营业务">
+                </div>
+            </div>
+
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.companyInfo.companyTel" type="text" placeholder="请输入公司的电话">
+                </div>
+            </div>
+
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.companyInfo.companyFax" type="text" placeholder="请输入公司的传真">
+                </div>
+            </div>
+
+            <div class= "register-input">
+                <div class="register-input-imgs">
+                    <img class="register-input-img-pwd" src="img/icon_password.png" />
+                </div>
+                <div class="register-input-items-other">
+                    <input ng-model="vm.companyInfo.companyMark" type="text" placeholder="请输入公司的标语">
+                </div>
+            </div>
+
+            <div class= "register-company-input">
+                <div class= "gap-10" style="text-align: center">
+                    <label style="color:#0c60ee" for="companyPro">请您输入公司简介,字数少于100字</label>
+                    <textarea ng-model="vm.companyInfo.companyPro" id='companyPro' class="gap-5" style="border:solid 1px #f2f2f2; width:98%; height:130px;text-align: center; font-size: 16px; color:#0c60ee"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="register-confirm">
+            <div class="confirm-space-one"></div>
+            <div class="register-buttons" ng-click="vm.commitConpanyInfo()">
+                <span>下一步</span>
+            </div>
+            <div class="confirm-space-two"></div>
+        </div>
+
+    </ion-content>
+</ion-view>
