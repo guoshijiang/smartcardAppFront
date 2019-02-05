@@ -31,7 +31,8 @@
 		<div class="bottom-boxs-space"></div>
 		<div class="item item-body bottom-boxs">
 			<div class="img-box">
-				<img class="item-img" src="img/QRcode.png" alt="">
+				<!-- <img class="item-img" src="img/QRcode.png" alt=""> -->
+				<qrcode data="{{vm.query.scone}}" size="150"></qrcode>
 				<span style="color:#254bb2; font-size:20px; margin-top:5px;">{{vm.query.mkeepName}}</span>
 				<span class="item-box-span" style="font-size:17px">{{vm.query.mkeepAddress}}</span>
 			</div>

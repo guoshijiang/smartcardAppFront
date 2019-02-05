@@ -1,10 +1,3 @@
-/* Empty. Add your own CSS if you like */
-
-
-/*交易样式*/
-
-
-/*买*/
 
 .item-offer-list {
     position: relative;
@@ -1025,4 +1018,6 @@ progress::-webkit-progress-value {
     -ms-user-select: auto;
     -moz-user-select: auto;
 }
-
+li{
+    list-style: none;
+}

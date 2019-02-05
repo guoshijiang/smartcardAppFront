@@ -25,7 +25,7 @@ angular.module('smartcard.router', ['ui.router']).config([
         controller: 'RegisterPhoneCtrl'
     })
 
-        .state('registerCard', {
+      .state('registerCard', {
             url: '/registerCard',
             templateUrl: 'account/templates/registerCard.html',
             controller: 'RegisterCardCtrl'
@@ -35,7 +35,28 @@ angular.module('smartcard.router', ['ui.router']).config([
         url: '/tab',
         abstract: true,
         templateUrl: 'templates/tabs.html',
-        controller: 'TabCtrl'
+        controller: 'TabCtrl',
+        // cache: true,
+            resolve: {
+              auth: ['$q','$log','AuthenticationService',
+                function($q, $log, AuthenticationService) {
+                  var userInfo = AuthenticationService.getUserInfo()
+            // 如果本地有token且token有效则不通过
+            console.log('333')
+            if (userInfo.token) {
+              // if (userInfo) {
+              return $q.when({
+                msg: 'logined',
+                data: userInfo
+              });
+            } else {
+              return $q.reject({
+                msg:'no_login'
+              });
+            }
+            }
+          ]
+        }
       })
 
       //第一个模块

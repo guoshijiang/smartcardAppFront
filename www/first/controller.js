@@ -3,7 +3,7 @@ angular
   /**
    *首页控制器
    */
-  .controller('FirstCtrl', function($scope, $timeout, ionicToast,FirstServe,$state) {
+  .controller('FirstCtrl', function($scope, $timeout, ionicToast,FirstServe,$state,$ionicActionSheet) {
       $scope.turnList=[]
       $scope.prePage = function(index) {
           
@@ -38,6 +38,36 @@ angular
               })
       }
       $scope.init()
+      $scope.addMyMing = function(){
+        var hideSheet = null,
+          buttons = [{ text: '<i class="text-center">手动添加名片</i>' },
+                    { text: '<i class="text-center">扫描纸质名片</i>' }];
+        hideSheet = $ionicActionSheet.show({
+          buttons: buttons,
+          // destructiveText: 'Delete',
+          // titleText: '上传图片',
+          cancelText: '取消',
+          cancel: function () {
+              // add cancel code..
+              hideSheet();
+          },
+          buttonClicked: function (index) {
+              switch (index) {
+				  case 0:
+				  	  hide();
+				  	  $state.go('tab.addCard')
+                      break;
+                  case 1:
+                      break;
+                  case 2:
+                      hide();
+                      break;
+                  default:
+                      break;
+              }
+          }
+      })
+      }
   })
 
   .controller('CardModelCtrl', function($scope, $timeout, ionicToast) {

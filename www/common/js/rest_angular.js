@@ -81,31 +81,31 @@ angular
   /**
    * 浏览器本地存储操作
    */
-  .factory('Storage', function(ENV) {
-    function Storage(storge) {
-      this.set = function(key, data) {
-        return storge.setItem(key, window.JSON.stringify(data)) //local
+  // .factory('Storage', function(ENV) {
+  //   function Storage(storge) {
+  //     this.set = function(key, data) {
+  //       return storge.setItem(key, window.JSON.stringify(data)) //local
 
-        //return window.sessionStorage.setItem(key, window.JSON.stringify(data)) ; //session
-      }
-      this.get = function(key) {
-        return window.JSON.parse(storge.getItem(key))
-        //return window.JSON.parse(window.sessionStorage.getItem(key)) ; //session
-      }
-      this.remove = function(key) {
-        storge.removeItem(key)
-        //return window.sessionStorage.removeItem(key) ; //session
-      }
-      //清楚所有的
-      this.clear = function() {
-        storge.clear()
-      }
-    }
+  //       //return window.sessionStorage.setItem(key, window.JSON.stringify(data)) ; //session
+  //     }
+  //     this.get = function(key) {
+  //       return window.JSON.parse(storge.getItem(key))
+  //       //return window.JSON.parse(window.sessionStorage.getItem(key)) ; //session
+  //     }
+  //     this.remove = function(key) {
+  //       storge.removeItem(key)
+  //       //return window.sessionStorage.removeItem(key) ; //session
+  //     }
+  //     //清楚所有的
+  //     this.clear = function() {
+  //       storge.clear()
+  //     }
+  //   }
 
-    return new Storage(ENV.local)
-  })
+  //   return new Storage(ENV.local)
+  // })
 
-  //家政服务超市请求接口
+  //卡得商务请求接口
   .factory('SmdkRestAngular', function(Restangular, ENV, GetToken) {
     return Restangular.withConfig(function(RestangularConfigurer) {
       if (ENV.encode) {
@@ -119,17 +119,6 @@ angular
           // 'x-access-token': GetToken.getToken(),
           'Content-Type': 'application/json;charset=utf-8'
         })
-        // RestangularConfigurer.setDefaultHttpFields({
-        //   transformRequest: function(data) {
-        //     var str = []
-        //     for (var p in data) {
-        //       str.push(
-        //         encodeURIComponent(p) + '=' + encodeURIComponent(data[p])
-        //       )
-        //     }
-        //     return str.join('&')
-        //   }
-        // })
         RestangularConfigurer.setBaseUrl(ENV.api.Home)
       }
     })

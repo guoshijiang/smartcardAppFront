@@ -6,9 +6,9 @@ angular.module('rsc.development.config', []).constant('ENV', {
   encode: false, // false 不加密
   debug: true,
   version: '0.1.2',
-  storage: window.sessionStorage,
+  // storage: window.sessionStorage,//临时
   local: window.localStorage,
-  // storage: window.localStorage,
+  storage: window.localStorage,
   scroll: false,
   imgUrl: 'http://120.78.206.130:8989'
 });

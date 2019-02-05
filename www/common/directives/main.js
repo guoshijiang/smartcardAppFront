@@ -3,7 +3,7 @@
  */
 
 angular
-  .module('rsc.common.directives', [])
+  .module('rsc.common.directives', ['ion-BottomSheet'])
   .directive('xnCall', function(
     smdkAlert,
     $rootScope,
@@ -41,7 +41,7 @@ angular
             function onError(res) {
               $log.debug('Error:call number' + res)
             },
-            vm.query.phone,
+            $scope.telnum,
             true
           )
         }
@@ -121,7 +121,7 @@ angular
                     var opt = {
                         url: ENV.api.Home + '/upload/imgfile',
                         headers: {
-                            'x-access-token': Storage.get('userInfo').token,
+                            // 'x-access-token': Storage.get('userInfo').token,
                             'Content-Type': undefined
                         }
                     }

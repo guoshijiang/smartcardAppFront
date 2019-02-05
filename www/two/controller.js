@@ -74,6 +74,7 @@ angular
                     if (res.code === 200) {
                         vm.query = res.result;
                         vm.query.tagData = res.result.mkeepTag.split(" ");
+                        vm.query.scone = 'name=' + vm.query.mkeepName + '&userId=' + vm.query.userId + '&id=' + vm.query.id
                     }
                 });
         };

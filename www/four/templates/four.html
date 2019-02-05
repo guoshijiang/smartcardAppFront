@@ -6,8 +6,8 @@
       </div>
     </div>
   </ion-nav-title>
-  <ion-nav-buttons side="right">
-    <i  class="icon-size-min" ui-sref="rsc.common_publish_type">编辑</i>
+  <ion-nav-buttons side="right" >
+    <i  class="icon-size-min" ng-click='vm.scone()'>扫一扫</i>
 </ion-nav-buttons>
   <ion-content class="bg-gray bg-mine">
     <div class="my-info">
@@ -65,7 +65,7 @@
           <i class="icon ion-ios-arrow-right"></i>
         </a>
       </div>
-      <div class="list gap-4" xn-call>
+      <div class="list gap-4" xn-call telnum='13261886450'>
         <a nav-transition="ios" nav-direction="forward" class="item  item-icon-left item-icon-right">
           <i class="icon ion-feedback"></i> <span class="font-card">测试打电话</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -74,6 +74,12 @@
       <div class="list gap-4" smdk-img-tool>
         <a nav-transition="ios" nav-direction="forward" class="item  item-icon-left item-icon-right">
           <i class="icon ion-feedback"></i> <span class="font-card">测试上传图片</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+      </div>
+      <div class="list gap-4" ng-click='vm.shareAction()'>
+        <a nav-transition="ios" nav-direction="forward" class="item  item-icon-left item-icon-right">
+          <i class="icon ion-feedback"></i> <span class="font-card">测试分享</span>
           <i class="icon ion-ios-arrow-right"></i>
         </a>
       </div>

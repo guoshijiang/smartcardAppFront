@@ -1,6 +1,6 @@
 angular
     .module('smartcard.account.ctrl', [])
-    .controller('LoginPhoneCtrl', function($scope, $timeout, $state, ionicToast, AccountServe) {
+    .controller('LoginPhoneCtrl', function($scope, $timeout, $state, ionicToast, AccountServe,Storage) {
         var vm = ($scope.vm = this);
         vm.loginP = {
             phone:'',
@@ -40,7 +40,10 @@ angular
                         ionicToast.show(res.message, 'middle', false, 1500);
                         return ;
                     } else if(res.code === 200) {
+
                         vm.query = res.result;
+                        console.log(res)
+                        Storage.set('userInfo',res)
                         localStorage.setItem("token", res.token);
                         localStorage.setItem("userId", res.userId);
                         localStorage.setItem("userUuid", res.userUuid);
@@ -50,7 +53,7 @@ angular
         };
     })
 
-    .controller('LoginPwdCtrl', function($scope, $timeout, $state, ionicToast, AccountServe) {
+    .controller('LoginPwdCtrl', function($scope, $timeout, $state, ionicToast, AccountServe,Storage) {
         var vm = ($scope.vm = this);
         vm.login = {
             username:'',
@@ -69,6 +72,9 @@ angular
                     }
                     else if (res.code === 200) {
                         vm.query = res.result;
+                        console.log(res)
+                        delete vm.query.password;
+                        Storage.set('userInfo',vm.query)
                         localStorage.setItem("token", res.result.token)
                         localStorage.setItem("userId", res.result.id)
                         localStorage.setItem("userUuid", res.result.userUuid);

@@ -3,15 +3,37 @@ angular
   /**
    *首页控制器
    */
-  .controller('FourTabCtrl', function($scope, $timeout, FourServe) {
-      var vm = ($scope.vm = this);
-      vm.query = {
+  .controller('FourTabCtrl', function($scope, $timeout, FourServe,ShareHelpNew,ionicToast,$rootScope) {
+        var vm = ($scope.vm = this);
+      	vm.query = {
           id:localStorage.getItem("userId"),
           status:1,
           resData:'',
           advanceData:[]
-      };
-      vm.init = function() {
+      	};
+        vm.shareInfo = {
+        	msg: {
+				url: 'http://www.51winchannel.com',
+				title: '苏镇',
+				tagName: 'smdk',
+				description:'您好！欢迎添加我的名片，美好合作从认识开始。',
+				img: 'http://120.78.206.130:8899/image/2019/01/30/68e6e5f9-d526-4000-9f0d-dbc4170c9e44.png'
+			},
+			opts: {
+				hideSms: false,
+				type: '',
+				params: {}
+			},
+			params: {
+				route: {
+				}
+			}
+		}
+        ShareHelpNew.initShare($scope, vm.shareInfo);
+        vm.shareAction = function () {
+            $scope.show();
+        };
+      	vm.init = function() {
           FourServe.findUserById({id: vm.query.id}).then(function (res) {
               if (res.code === 200) {
                   console.log(res.result);
@@ -21,16 +43,24 @@ angular
           FourServe.findUserInfoById({userId:vm.query.id}).then(function (res) {
               if (res.code === 200) {
                   console.log(res.result);
-                  vm.query.resData = res.result;
-                  vm.query.advanceData = res.result.advance.split(" ");
+                  if(res.result){
+                    vm.query.resData = res.result;
+                    vm.query.advanceData = res.result.advance.split(" ");
+                  }
+                  
               }
           });
-
-
       }
-      $scope.$on('$ionicView.beforeEnter', function() {
-          vm.init();
-      });
+      vm.scone = function() {
+        if (ionic.Platform.isWebView()) {
+            $rootScope.rscScan()
+        } else {
+            ionicToast.show("请使用手机扫一扫", 'middle', false, 2500);
+        }
+      }
+        $scope.$on('$ionicView.beforeEnter', function() {
+            vm.init();
+        });
   })
 
   .controller('ReconmentCtrl', function (
@@ -45,15 +75,14 @@ angular
     }
   })
 
-  .controller('SetupCtrl', function (
-    $scope,
-    $timeout,
-    ionicToast
-  ) {
-    console.log('设置')
+  .controller('SetupCtrl', function ($scope,Storage,$state) {
     var vm = ($scope.vm = this)
     $scope.go = function() {
       console.log('设置')
+    }
+    $scope.goOut = function() {
+        Storage.remove('userInfo')
+        $state.go('loginPwd')
     }
   })
 

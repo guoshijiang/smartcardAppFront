@@ -5,7 +5,10 @@
 				<a class="button" nav-transition="ios" nav-direction="enter">我的名片</a>
 			</div>
 		</div>
-  </ion-nav-title>
+	</ion-nav-title>
+	<ion-nav-buttons side="right" >
+    	<i  class="icon-size ion-plus-round" ng-click='addMyMing()'></i>
+	</ion-nav-buttons>
 	<ion-content class="bg-mine xn-content">
 		<div class="book preserve-3d" >
 			<div class="list card list-card" on-drag-right="prePage($index)" on-drag-left="nextPage($index)" ng-repeat="item in turnList" ng-class="{'mid':mid==$index,'left':$index < mid,'right':$index > mid,'animation1':next&&$index==turnFlag,'animation2':next&&$index==turnFlag+1,'animation3':next&&$index==turnFlag+2,'animation1-back':pre&&$index==turnFlag1-1,'animation2-back':pre&&$index==turnFlag1,'animation3-back':pre&&$index==turnFlag1+1}">
@@ -30,10 +33,10 @@
 			    </div>
 			  </div>
 			</div>
-			<div class="menu-card">
+			<!-- <div class="menu-card">
 				<div class="item" ui-sref='tab.addCard'>手动添加名片</div>
 				<div class="item">扫描纸质名片</div>
-			</div>
+			</div> -->
 		</div>
 	</ion-content>
 </ion-view>

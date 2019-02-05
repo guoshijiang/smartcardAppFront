@@ -18,7 +18,17 @@ angular.module('rsc.service.common.bak', [])
                 //return window.sessionStorage.setItem(key, window.JSON.stringify(data)) ; //session
             };
             this.get = function (key) {
-                return window.JSON.parse(storge.getItem(key));
+                try {
+                    if(storge.getItem(key)){
+                        return window.JSON.parse(storge.getItem(key));
+                    }else{
+                        return {}
+                    }
+                    
+                } catch (error) {
+                    console.log(error)
+                }
+                
                 //return window.JSON.parse(window.sessionStorage.getItem(key)) ; //session
             };
             this.remove = function (key) {

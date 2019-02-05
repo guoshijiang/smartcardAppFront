@@ -167,3 +167,63 @@
 	border: transparent;
 
 }
+/* 人脉的名片 */
+.item-ka{
+	width: 92%;
+	height: 130px;
+    margin: 5px auto;
+    border: 1px solid #ccc;
+	border-radius: 10px;
+	/* background-color: #fff; */
+	background-image: url('../img/ka-bg.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+
+}
+.item-ka .ka-box{
+	overflow: hidden;
+}
+.item-ka .mankeep-info{
+	margin-left: 10px;
+	width: 50%;
+}
+.item-ka .mankeep-info p{
+	color:#fff;
+	font-weight: 600;
+}
+.item-ka .mankeep-info p:first-child {
+	font-size: 15px;
+	font-weight: 700;
+	
+}
+.item-ka .mankeep-info li{
+	display: inline-block;
+	background-color:rgba(247, 247, 247, 0.3);
+	margin-left: 5px;
+	padding: 0 5px;
+	border-radius: 4px;
+	color:#5b5d59;
+}
+.item-ka .mankeep-info .nogap{ 
+	margin-left: 0px;
+}
+.item-ka .add-time{
+	width: 28%;
+	text-align: right;
+}
+.item-ka .add-time span{
+	color:#fff;
+	font-weight: 600;
+	text-align: right;
+}
+.ka-left{
+	float: left;
+	width: 45px;
+	height: 45px;
+	overflow: hidden;
+	margin: 10px 0 0 10px;
+	border-radius: 50%;
+}
+.ka-left .pho-img-item{	
+	width: 100%;
+}

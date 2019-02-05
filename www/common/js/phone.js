@@ -1,72 +1,29 @@
 angular.module('rsc.service.phone', [])
-    .value('EnumType', {
-        file_type: {
-            //车辆
-            xing_shi_zheng: 'xing_shi_zheng',  //行驶证照片
-            yun_ying_zheng: 'yun_ying_zheng',  //运营证照片
-            che_tou_zhao: 'che_tou_zhao',    //车头照
-            //个人
-            id_card_number: 'id_card_number',
-            jia_shi_zheng: 'jia_shi_zheng',
-            tou_xiang: 'tou_xiang',
-            //公司
-            logo: 'logo',
-            ying_ye_zhi_zhao: 'ying_ye_zhi_zhao',
-            qi_ye_shui_wu_deng_ji_zheng: 'qi_ye_shui_wu_deng_ji_zheng',
-            qi_ye_zu_zhi_ji_gou_dai_ma_zheng: 'qi_ye_zu_zhi_ji_gou_dai_ma_zheng',
-            qi_ye_yin_hang_kai_hu_xu_ke_zheng: 'qi_ye_yin_hang_kai_hu_xu_ke_zheng',
-            quan_guo_gong_ye_chan_pin_sheng_chan_xu_ke_zheng: 'quan_guo_gong_ye_chan_pin_sheng_chan_xu_ke_zheng',
-            she_bei_xing_hao_zhu_ce_ren_zheng: 'she_bei_xing_hao_zhu_ce_ren_zheng',
-            ben_chang_chan_pin_zhi_jian_bao_gao: 'ben_chang_chan_pin_zhi_jian_bao_gao',
-            jiao_yi_fang_chan_pin_zhi_jian_bao_gao: 'jiao_yi_fang_chan_pin_zhi_jian_bao_gao',
-            di_san_fang_chan_pin_zhi_jian_bao_gao: 'di_san_fang_chan_pin_zhi_jian_bao_gao',
-            qi_ye_jing_ying_cai_wu_bao_biao: 'qi_ye_jing_ying_cai_wu_bao_biao'
-        },
-        columnName: {
-            //车辆
-            xing_shi_zheng: 'xing_shi_zheng_url',  //行驶证照片
-            yun_ying_zheng: 'yun_ying_zheng_url',  //运营证照片
-            che_tou_zhao: 'che_tou_zhao_url',    //车头照
-            //个人
-            id_card_number: 'id_card_number',
-            jia_shi_zheng: 'jia_shi_zheng',
-            tou_xiang: 'tou_xiang',
-            //公司
-            logo: 'logo',
-            ying_ye_zhi_zhao: 'ying_ye_zhi_zhao',
-            qi_ye_shui_wu_deng_ji_zheng: 'qi_ye_shui_wu_deng_ji_zheng',
-            qi_ye_zu_zhi_ji_gou_dai_ma_zheng: 'qi_ye_zu_zhi_ji_gou_dai_ma_zheng',
-            qi_ye_yin_hang_kai_hu_xu_ke_zheng: 'qi_ye_yin_hang_kai_hu_xu_ke_zheng',
-            quan_guo_gong_ye_chan_pin_sheng_chan_xu_ke_zheng: 'quan_guo_gong_ye_chan_pin_sheng_chan_xu_ke_zheng',
-            she_bei_xing_hao_zhu_ce_ren_zheng: 'she_bei_xing_hao_zhu_ce_ren_zheng',
-            ben_chang_chan_pin_zhi_jian_bao_gao: 'ben_chang_chan_pin_zhi_jian_bao_gao',
-            jiao_yi_fang_chan_pin_zhi_jian_bao_gao: 'jiao_yi_fang_chan_pin_zhi_jian_bao_gao',
-            di_san_fang_chan_pin_zhi_jian_bao_gao: 'di_san_fang_chan_pin_zhi_jian_bao_gao',
-            qi_ye_jing_ying_cai_wu_bao_biao: 'qi_ye_jing_ying_cai_wu_bao_biao'
-        },
-        shareWeXinType: {
-            SESSION: 0,
-            TIMELINE: 1
-        },
-        shareContentType: {
-            CheckInstalled: 'check-installed',
-            Text: 'send-text',
-            LocalImage: 'send-photo-local',
-            RemoteImage: 'send-photo-remote',
-            LinkLocalImage: 'send-link-thumb-local',
-            LinkRemoteImage: 'send-link-thumb-remote',
-            Music: "send-music"
+.value('EnumType', {
+    
+    shareWeXinType: {
+        SESSION: 0,
+        TIMELINE: 1
+    },
+    shareContentType: {
+        CheckInstalled: 'check-installed',
+        Text: 'send-text',
+        LocalImage: 'send-photo-local',
+        RemoteImage: 'send-photo-remote',
+        LinkLocalImage: 'send-link-thumb-local',
+        LinkRemoteImage: 'send-link-thumb-remote',
+        Music: "send-music"
 
-        },
-        shareInfo: {
-            name_card: {
-                title: '个人名片',
-                description: '这是我的名片，快快查看吧',
-                url: ''
-            }
+    },
+    shareInfo: {
+        name_card: {
+            title: '个人名片',
+            description: '这是我的名片，快快查看吧',
+            url: ''
         }
+    }
 
-    })
+})
     /**
      * 微信分享
      */
@@ -832,3 +789,120 @@ angular.module('rsc.service.phone', [])
         }
 
     }])
+    /**
+     * 分享功能弹窗
+     */
+    .service('ShareHelpNew', function (smdkAlert, $ionicModal, EnumType, ShareWeChat, $state, $cordovaClipboard, SmsHelp, $bottomSheet, ionicToast) {
+        return {
+            initShare: function ($scope, shareInfo) {
+                var alertQR = function () {
+                    console.log(shareInfo.msg)
+                    smdkAlert.alert('<h5 class="text-center">扫描二维码下载app</h5>')
+                }
+                $scope.shareOpts = shareInfo.opts;
+                $scope.copyFailed = function (copy) {
+                    if (!ionic.Platform.isWebView()) {
+                        window.prompt('请请选中文字，手动进行复制!', copy);
+                    }
+                };
+
+                //手机端copy
+                $scope.copyForPhone = function () {
+
+                    $cordovaClipboard
+                        .copy(shareInfo.msg.url)
+                        // .copy($scope.shareInfo.msg.title + $scope.shareInfo.msg.description + $scope.shareInfo.msg.url)
+                        .then(function () {
+                            // success
+                            ionicToast.show('复制成功!', 'middle', false, 2500);
+                            // window.alert(($scope.shareInfo.opts.copy_msg || $scope.shareInfo.msg.description) + '复制成功!');
+                        }, function () {
+                            // error
+                            ionicToast.show('复制失败!', 'middle', false, 2500);
+                        });
+                }
+                //复制成功
+                $scope.copySuccess = function () {
+                    smdkAlert.alert(($scope.shareInfo.opts.copy_msg || (($scope.shareInfo.msg.type ? $scope.shareInfo.msg.type : '') + $scope.shareInfo.msg.title + $scope.shareInfo.msg.description)), function () {
+                        $scope.modal.hide();
+                    }, '复制成功');
+                }
+                $scope.show = function () {
+                    $bottomSheet.show({
+                        buttons: [
+                            [
+                                { btText: "朋友圈", img: "./img/share-icon2.png", btClass: "", btId: "2" },
+                                { btText: "微信好友", img: "./img/share-icon.png", btClass: "", btId: "1" },
+                                { btText: "短信邀请", img: "./img/share-icon1.png", btClass: "", btId: "3" }
+                            ],
+                            [
+                                { btText: "取消", btClass: "share-cancel", btId: "hide", hideOnClick: true }, //hide the bottomSheet when click
+                            ]
+                        ],
+                        titleText: '',
+                        buttonClicked: function (button, scope) {
+                            if (button.btId == '1') {
+                                $scope.shared('wechat1');
+                                scope.cancel()
+                                return;
+                            } else if (button.btId == '2') {
+                                $scope.shared('wechat');
+                                scope.cancel()
+                                return;
+                            } else if (button.btId == '3') {
+                                //$scope.copyForPhone();
+                                if (ionic.Platform.isWebView()) {
+                                    $scope.copyForPhone();
+                                } else { //pc端
+                                    //$scope.copyForPhone();
+                                }
+                                scope.cancel()
+                                return;
+                            } else {
+                                scope.cancel()
+                                return;
+                            }
+                        }
+                    });
+                }
+
+                $scope.shared = function (type) {
+                    switch (type) {
+                        case 'sms':
+                            if (ionic.Platform.isWebView()) {
+                                if ($scope.shareInfo.opts.params.origin == 'newMessage') {
+                                    SmsHelp.send($scope.inivitePhoneArr, $scope.shareInfo.msg.description + " " + $scope.shareInfo.msg.url)
+                                } else {
+                                    $state.go('tab.shareSMS', shareInfo.params.route);
+                                }
+
+                            } else {
+                                alertQR();
+                            }
+                            break;
+                        case 'wechat':
+                            if (ionic.Platform.isWebView()) {
+                                ShareWeChat.share(EnumType.shareWeXinType.TIMELINE, EnumType.shareContentType.LinkLocalImage, shareInfo.msg)
+                            } else {
+                                alertQR();
+                            }
+                            break;
+                        case 'wechat1':
+                            if (ionic.Platform.isWebView()) {
+                                ShareWeChat.share(EnumType.shareWeXinType.SESSION, EnumType.shareContentType.LinkLocalImage, shareInfo.msg)
+                            } else {
+                                alertQR();
+                            }
+                            break;
+                        default:
+
+                    }
+
+                };
+
+
+                // $scope.share();
+            }
+        }
+    })
+

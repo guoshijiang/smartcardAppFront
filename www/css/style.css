@@ -612,3 +612,6 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
   background: url('../img/icon/Up_selected.png') center center no-repeat;
   background-size: cover;
 }
+.float-left{
+  float: left;
+}

@@ -20,15 +20,14 @@
       <h4 class="text-gray gap-5">请搜索您感兴趣的行业去认识您需要的人脉</h4>
       <h4 class="text-gray gap-5">卡得与您同在，助力您的梦想</h4>
     </div>
-    <ion-list  ng-repeat='item in vm.query.data track by $index'>
+    <!-- <ion-list  ng-repeat='item in vm.query.data track by $index'>
       <ion-item  class="item-remove-animate item-icon-right" ui-sref='tab.detail({id:item.id})'>
         <div class="mankeep">
-          <div class="mankeep-pho">
+          <div class="">
             <div class = "mankeep-pho-img">
               <img class="pho-img" ng-src="img/ben.png">
             </div>
           </div>
-
           <div class="mankeep-info">
             <div class="mankeep-info-pname">
               <div class="info-name">
@@ -38,9 +37,7 @@
                 <p>{{item.mkeepBusiness}}</p>
               </div>
             </div>
-
             <div class="mankeep-company"><p>天津木姜子科技有限公司</p></div>
-
             <div class="mankeep-address">
               <p >{{item.mkeepAddress}}</p>
             </div>
@@ -53,7 +50,28 @@
 
 
       </ion-item>
-    </ion-list>
+    </ion-list> -->
+
+    <div  ng-repeat='item in vm.query.data track by $index'>
+      <div class="item-ka" ui-sref='tab.detail({id:item.id})'>
+        <div class="ka-box clearFix">
+          <div class="ka-left">
+              <img class="pho-img-item" ng-src="img/ben.png">
+          </div>
+          <div class="mankeep-info gap-10">
+                <p>{{item.mkeepBusiness}}</p>
+                <p>{{item.mkeepName}}</p>
+                <li class="float-left gap-10" ng-class='{nogap:$index==0}' ng-repeat='tagItem in item.Tags track by $index'>
+                    {{tagItem}}
+                </li>
+          </div>
+          <div class="float-left gap-20 add-time">
+            <span>2012.09.29</span>
+          </div>
+
+      </div>
+    </div>
+
     <ion-infinite-scroll ng-if='vm.hasMore' icon="ion-loading-c" immediate-check="false" on-infinite="vm.loadMore()"> </ion-infinite-scroll>
   </ion-content>
 </ion-view>
