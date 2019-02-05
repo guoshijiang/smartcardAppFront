@@ -40,33 +40,39 @@ angular
       $scope.init()
       $scope.addMyMing = function(){
         var hideSheet = null,
-          buttons = [{ text: '<i class="text-center">手动添加名片</i>' },
-                    { text: '<i class="text-center">扫描纸质名片</i>' }];
+           buttons = [{ text: '<i class="text-center">手动添加名片</i>' },
+					{ text: '<i class="text-center">扫描纸质名片</i>' }
+				];
+			if (ionic.Platform.isAndroid()) {
+                    buttons.push({ text: '<i class="text-center">取消</i>' })
+                }
         hideSheet = $ionicActionSheet.show({
           buttons: buttons,
-          // destructiveText: 'Delete',
-          // titleText: '上传图片',
+		//   destructiveText: 'Delete',
+		//   titleText: '添加名片',
           cancelText: '取消',
           cancel: function () {
               // add cancel code..
-              hideSheet();
+            //   
           },
           buttonClicked: function (index) {
               switch (index) {
 				  case 0:
-				  	  hide();
-				  	  $state.go('tab.addCard')
+						$state.go('tab.addCard')
+						hideSheet();
                       break;
                   case 1:
                       break;
                   case 2:
-                      hide();
+				  	hideSheet();
                       break;
                   default:
                       break;
               }
           }
-      })
+	  })
+	
+	
       }
   })
 

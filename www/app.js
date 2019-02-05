@@ -65,14 +65,14 @@ angular
       }
 	})
 	if(ionic.Platform.isWebView()){
-		if (ionic.Platform.platform() == 'android') {
-			StatusBar.backgroundColorByHexString("#354bb1");
-		}else{
-			$cordovaStatusbar.overlaysWebView(false);
-			$cordovaStatusbar.style(1);
-			StatusBar.styleLightContent();
-			$cordovaStatusbar.styleColor('black');
-		}
+		// if (ionic.Platform.platform() == 'android') {
+		// 	StatusBar.backgroundColorByHexString("#354bb1");
+		// }else{
+		// 	$cordovaStatusbar.overlaysWebView(false);
+		// 	$cordovaStatusbar.style(1);
+		// 	StatusBar.styleLightContent();
+		// 	$cordovaStatusbar.styleColor('black');
+		// }
 	}
 	
 	
