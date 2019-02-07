@@ -212,8 +212,6 @@ angular.module('rsc.service.phone', [])
                 };
             }
 
-
-
             $cordovaImagePicker.getPictures(options)
                 .then(function (results) {
                     
@@ -225,6 +223,7 @@ angular.module('rsc.service.phone', [])
                                 })
                                 .catch(function fail(error) {
                                     $log.error('选取照片出错', error)
+
                                 })
                         } else {
                       plugins.crop.promise(results[0], options)
@@ -333,11 +332,11 @@ angular.module('rsc.service.phone', [])
                                     }
 
                                 }
-
+                                console.log('9999',options)
                                 $cordovaCamera.getPicture(options).then(function (imageURI) {
-
+                                    console.log('options',imageURI)
                                     cb(imageURI);
-                                    hide();
+                                    hideSheet();
                                     $cordovaCamera.cleanup();
 
                                     //$scope.imgUri = imageURI;

@@ -13,7 +13,8 @@
     <div class="my-info">
       <div class="login-img">
        <span class="cirle">
-          <img ng-src="img/ben.png" alt="">
+          <img ng-src="img/ben.png" alt="" ng-if='!vm.query.imgulr'>
+          <img ng-src="{{vm.query.imgulr}}" alt="" ng-if='vm.query.imgulr'>
         </span>
         <div class="my-info-profile">
           <p class="name-title "   telnum='13261886450'>{{vm.query.resData.name || '马云'}} <span class="zhi">{{vm.query.resData.position}}</span> </p>
@@ -71,9 +72,9 @@
           <i class="icon ion-ios-arrow-right"></i>
         </a>
       </div>
-      <div class="list gap-4" smdk-img-tool>
+      <div class="list gap-4" smdk-img-tool imgulr = 'vm.query.imgulr'>
         <a nav-transition="ios" nav-direction="forward" class="item  item-icon-left item-icon-right">
-          <i class="icon ion-feedback"></i> <span class="font-card">测试上传图片</span>
+          <i class="icon ion-feedback"></i> <span class="font-card">测试上传图片{{vm.query.imgulr.slice(vm.query.imgulr.length-8)}}</span>
           <i class="icon ion-ios-arrow-right"></i>
         </a>
       </div>

@@ -166,7 +166,7 @@ angular
 		return $cordovaBarcodeScanner.scan(scanConfig)
 			.then(function (result) {
 				if (result.text != '') {
-					alet(result.text)
+					alert(result.text)
 					// var data = result.text.split("&")
 					// if (!data[2]) {
 					// 	data[2] = 'TRAFFIC_DRIVER_PRIVATE'

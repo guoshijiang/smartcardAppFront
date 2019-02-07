@@ -73,7 +73,7 @@ angular
         restrict: 'ECA',
         replace: true,
         scope: {
-            fun: '='
+            imgulr: '='
         },
         link: function($scope, element, attr) {
             element.on('click', function() {
@@ -134,15 +134,13 @@ angular
                             function(json) {
                                 $log.debug('上传图片的回调', json)
                                 var result = JSON.parse(json.response)
-
-                                if (result.status == '200') {
+                                if (result.code == '200') {
                                     $ionicLoading.hide()
                                     ionicToast.show('上传成功','middle', false, 1500)
 
-                                    $scope.fun.user_pho =
-                                        result.data.img_url
-                                    Storage.set('userInfo', $scope.fun)
-                                    console.log($scope.fun)
+                                    $scope.imgulr = ENV.imgUrl + result.result;
+                                    // Storage.set('userInfo', $scope.fun)
+                                    // console.log($scope.fun)
                                 } else {
 									ionicToast.show('上传失败','middle', false, 1500)
                                     $ionicLoading.hide()
@@ -184,11 +182,12 @@ angular
                             var _url = ENV.api.Home + '/upload/imgfile';
                             _upimg($scope.file[0], _url, $http).success(
                                 function(data) {
-                                    if (data.status == '200') {
+                                    console.log('data',data)
+                                    if (data.code == '200') {
                                         ionicToast.show('上传成功','middle', false, 1500)
-                                        $scope.fun.user_pho = data.data.img_url
-                                        Storage.set('userInfo', $scope.fun)
-                                        console.log($scope.fun)
+                                        $scope.imgulr = ENV.imgUrl + data.result;
+                                        // Storage.set('userInfo', $scope.fun)
+                                        // console.log($scope.fun)
                                     } else {
                                         ionicToast.show('上传失败,请稍后重试','middle', false, 1500)
                                     }
