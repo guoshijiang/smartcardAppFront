@@ -37,8 +37,8 @@
 				<span class="item-box-span" style="font-size:17px">{{vm.query.mkeepAddress}}</span>
 			</div>
 			<div class="list-footer">
-				<div class="item div-item gap-10">手机号码: {{vm.query.mkeepPhone}}</div>
-				<div class="item div-item">电话号码: {{vm.query.mkeepTelphone}}</div>
+				<div class="item div-item gap-10" xn-call telnum='{{vm.query.mkeepPhone}}'>手机号码: {{vm.query.mkeepPhone}}</div>
+				<div class="item div-item" xn-call telnum='{{vm.query.mkeepTelphone}}'>电话号码: {{vm.query.mkeepTelphone}}</div>
 				<div class="item div-item">微信: {{vm.query.mkeepWeichat}}</div>
 				<div class="item div-item">QQ: {{vm.query.mkeepQq}}</div>
 				<div class="item div-item">邮箱: {{vm.query.mkeepMail}}</div>

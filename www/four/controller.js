@@ -3,7 +3,7 @@ angular
   /**
    *首页控制器
    */
-  .controller('FourTabCtrl', function($scope, $timeout, FourServe,ShareHelpNew,ionicToast,$rootScope) {
+  .controller('FourTabCtrl', function($scope,AccountServe, $timeout, FourServe,ShareHelpNew,ionicToast,$rootScope) {
         var vm = ($scope.vm = this);
       	vm.query = {
           id:localStorage.getItem("userId"),
@@ -14,10 +14,10 @@ angular
         vm.shareInfo = {
         	msg: {
 				url: 'http://www.51winchannel.com',
-				title: '苏镇',
+				title: 'vm.query.resData.name',
 				tagName: 'smdk',
-				description:'您好！欢迎添加我的名片，美好合作从认识开始。',
-				img: 'http://120.78.206.130:8899/image/2019/01/30/68e6e5f9-d526-4000-9f0d-dbc4170c9e44.png'
+				description:'您好！欢迎添加我的名片，美好合作从认识开始。',//http://120.78.206.130:8899/image/2019/02/24/faf4c971-acef-4908-a7f0-74eca605644f.png
+				url_list: ['http://120.78.206.130:8899/image/2019/01/30/68e6e5f9-d526-4000-9f0d-dbc4170c9e44.png']
 			},
 			opts: {
 				hideSms: false,
@@ -42,7 +42,6 @@ angular
 
           FourServe.findUserInfoById({userId:vm.query.id}).then(function (res) {
               if (res.code === 200) {
-                  console.log(res.result);
                   if(res.result){
                     vm.query.resData = res.result;
                     vm.query.advanceData = res.result.advance.split(" ");
@@ -58,6 +57,12 @@ angular
             ionicToast.show("请使用手机扫一扫", 'middle', false, 2500);
         }
       }
+
+        vm.changeUserInfo = function() {
+            AccountServe.registerComplishInfo({userId:52,}).then(res=>{
+                console.log(res)
+            })
+        }
         $scope.$on('$ionicView.beforeEnter', function() {
             vm.init();
         });

@@ -25,7 +25,7 @@ angular
     'rsc.service.common',
     'rsc.service.phone',
 	  'rsc.common.directives',
-	  'monospaced.qrcode'
+    'monospaced.qrcode'
   ])
   .value('AppVersion', '1.0.0')
   .run(function(

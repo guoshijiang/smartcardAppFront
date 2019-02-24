@@ -603,125 +603,6 @@ angular.module('rsc.service.phone', [])
         }
 
     })
-    /**
-     * 分享功能弹窗
-     */
-    .service('ShareHelp', function (smdkAlert, $ionicModal, EnumType, ShareWeChat, $state, $cordovaClipboard, SmsHelp) {
-
-
-        return {
-            initShare: function ($scope, shareInfo) {
-                var alertQR = function () {
-                    smdkAlert.alert('<img class="center-block" src="./img/QR.png"></img><h5 class="text-center">扫描二维码下载app</h5>')
-                }
-                $scope.shareOpts = shareInfo.opts;
-                $scope.copyFailed = function (copy) {
-                    if (!ionic.Platform.isWebView()) {
-                        window.prompt('请请选中文字，手动进行复制!', copy);
-                    }
-                };
-
-                //手机端copy
-                $scope.copyForPhone = function () {
-                    $cordovaClipboard
-                        .copy($scope.shareInfo.msg.title + $scope.shareInfo.msg.description + $scope.shareInfo.msg.url)
-                        .then(function () {
-                            // success
-                            smdkAlert.alert(($scope.shareInfo.opts.copy_msg || (($scope.shareInfo.msg.type ? $scope.shareInfo.msg.type : '') + $scope.shareInfo.msg.title + $scope.shareInfo.msg.description)) + '复制成功!');
-
-
-                            // window.alert(($scope.shareInfo.opts.copy_msg || $scope.shareInfo.msg.description) + '复制成功!');
-                        }, function () {
-                            // error
-                            smdkAlert.alert('复制失败!');
-                        });
-                }
-                //复制成功
-                $scope.copySuccess = function () {
-                    smdkAlert.alert(($scope.shareInfo.opts.copy_msg || (($scope.shareInfo.msg.type ? $scope.shareInfo.msg.type : '') + $scope.shareInfo.msg.title + $scope.shareInfo.msg.description)), function () {
-                        $scope.modal.hide();
-                    }, '复制成功')
-                }
-
-
-
-                //modal
-                $ionicModal.fromTemplateUrl('./templates/common/share.html', {
-                    scope: $scope,
-                    animation: 'slide-in-up',
-                    backdropClickToClose: true,
-                    hardwareBackButtonClose: true
-                }).then(function (modal) {
-                    $scope.modal = modal;
-                });
-
-                $scope.share = function () {
-                    $scope.modal && $scope.modal.show();
-                };
-
-                $scope.closeModalForShare = function () {
-                    $scope.modal && $scope.modal.hide();
-                };
-                //Cleanup the modal when we're done with it!
-                $scope.$on('$destroy', function () {
-                    $scope.modal && $scope.modal.remove();
-                });
-                // Execute action on hide modal
-                $scope.$on('modal.hidden', function () {
-                    // Execute action
-                });
-                // Execute action on remove modal
-                $scope.$on('modal.removed', function () {
-                    // Execute action
-                });
-
-
-                $scope.shared = function (type) {
-                    switch (type) {
-                        case 'sms':
-                            if (ionic.Platform.isWebView()) {
-                                if ($scope.shareInfo.opts.params.origin == 'newMessage') {
-                                    SmsHelp.send($scope.inivitePhoneArr, $scope.shareInfo.msg.description + " " + $scope.shareInfo.msg.url)
-                                } else {
-                                    $state.go('tab.shareSMS', shareInfo.params.route);
-                                }
-
-                            } else {
-                                alertQR();
-                            }
-
-                            // if (ionic.Platform.isWebView()) {
-                            //     $scope.modal.hide();
-                            // } else {
-                            //     smdkAlert.alert('jjj')
-                            // }
-                            break;
-                        case 'wechat':
-                            if (ionic.Platform.isWebView()) {
-                                ShareWeChat.share(EnumType.shareWeXinType.TIMELINE, EnumType.shareContentType.LinkLocalImage, shareInfo.msg)
-                            } else {
-                                alertQR();
-                            }
-                            break;
-                        case 'wechat1':
-                            if (ionic.Platform.isWebView()) {
-                                ShareWeChat.share(EnumType.shareWeXinType.SESSION, EnumType.shareContentType.LinkLocalImage, shareInfo.msg)
-
-                            } else {
-                                alertQR();
-                            }
-                            break;
-                        default:
-                            ;
-                    }
-
-                };
-
-
-                // $scope.share();
-            }
-        }
-    })
 
     /**
      * 发送短信
@@ -901,6 +782,72 @@ angular.module('rsc.service.phone', [])
 
 
                 // $scope.share();
+            }
+        }
+    })
+    /**
+     * 名片上传
+     */
+    .service('MingPianUpload', function ($q, $ionicLoading, PictureSelect, $cordovaFileTransfer, Storage, VideoSelect, $log) {
+
+        var uploadImg = function (fileUrl, options) {
+
+            var opt = new FileUploadOptions();
+            opt.fileKey = "image";
+            opt.fileName = fileUrl.substr(fileUrl.lastIndexOf('/') + 1);
+            opt.headers = options.headers ? options.headers : {"Content-Type": undefined };
+            opt.timeout = 10000;
+            opt.params = options.params ? options.params : null;
+            return $cordovaFileTransfer.upload(options.url, fileUrl, opt);
+        };
+        var resizeImg = function (fileUrl, options, cb) {
+            var opt = {
+                uri: fileUrl,
+                folderName: "Protonet Messenger",
+                quality: 90,
+                width: 700,
+                height: 700
+            };
+            return window.ImageResizer.resize(opt, function (url) {
+                cb(uploadImg(url, options));
+            }, function (err) {
+                console.log(err)
+            })
+        }
+        return {
+            upload: function (type, options, cb) {
+                switch (type) {
+                    case 'image':
+                        PictureSelect.selectOrTakePhoto(function (imgUrl) {
+
+                            if (imgUrl != 'error') {
+                                console.log(imgUrl)
+                                cb(uploadImg(imgUrl, options));
+                            } else {
+                                $log.error('未选择图片!', imgUrl);
+                            }
+                        })
+                        break;
+                    case 'resizeImg'://选择偏
+                        PictureSelect.selectOrTakeAvatar(function (imgUrl) {
+                            if (imgUrl != 'error') {
+                                console.log(imgUrl)
+                                if (ionic.Platform.isAndroid()) {
+                                    cb(uploadImg(imgUrl, options));
+                                } else {
+                                    cb(uploadImg(imgUrl, options));
+                                }
+
+                            } else {
+                                $log.error('未选择图片!', imgUrl);
+                            }
+                        }, true)
+                        break;
+                    case 'file':
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     })
